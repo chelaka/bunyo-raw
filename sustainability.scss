@@ -1,0 +1,107 @@
+@use "_designSystem.scss" as *;
+
+.hero-sustainability {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url("assets/heroSustainability.png");
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+
+.recycled-materials-section {
+  .mini-para:first-child {
+    margin-bottom: 3rem;
+  }
+}
+
+.fabric-section {
+  .left {
+    background-image: url("assets/materialTexture.png");
+    border-radius: 8px;
+    overflow: hidden;
+    height: 26rem;
+    position: relative;
+    color: $bunyo-white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .icon {
+      width: 1.5rem;
+    }
+    .made-with-text {
+      .super {
+        @extend .text-2xl;
+      }
+      .main {
+        @extend .text-5xl;
+        line-height: 1.1;
+        .highlight {
+          color: $sustainability-green;
+        }
+      }
+    }
+    .foot-note {
+      @extend .text-md;
+    }
+  }
+  .right {
+    .video-wrapper {
+      border-radius: 8px;
+      overflow: hidden;
+      height: 26rem;
+    }
+    video {
+      height: 100%;
+    }
+    .stat {
+      .icon {
+        max-width: 54px;
+      }
+      .number {
+        @extend .text-6xl;
+      }
+      .mini-para-title {
+        margin-bottom: 0.5rem;
+      }
+      .mini-para-description {
+        @extend .text-md;
+      }
+    }
+  }
+}
+
+.video-break {
+  height: 30rem;
+  overflow: hidden;
+  position: relative;
+  color: $bunyo-white;
+  .break-text {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    width: 100%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.sustainability-services {
+  .service {
+    margin-bottom: 8rem;
+    &:last-child {
+      margin-bottom: 0rem;
+    }
+  }
+  .service-image {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .service-headline {
+    @extend .text-4xl;
+  }
+  .service-description {
+    color: $gray-600;
+  }
+}

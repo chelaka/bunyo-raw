@@ -1,0 +1,163 @@
+//Layouts/Grids
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.grid-12 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 1.5rem;
+}
+
+//Col Sizing
+$i: 1;
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    grid-column: auto/span $i;
+  }
+
+  .col-start-#{$i} {
+    grid-column-start: $i !important;
+  }
+}
+
+//Margins
+
+$i: 1;
+@for $i from 1 through 40 {
+  .m-#{$i} {
+    margin: calc($i/5) + rem;
+  }
+  .mx-#{$i} {
+    margin-left: calc($i/5) + rem;
+    margin-right: calc($i/5) + rem;
+  }
+  .my-#{$i} {
+    margin-top: calc($i/5) + rem;
+    margin-bottom: calc($i/5) + rem;
+  }
+  .ml-#{$i} {
+    margin-left: calc($i/5) + rem;
+  }
+  .mr-#{$i} {
+    margin-right: calc($i/5) + rem;
+  }
+  .mt-#{$i} {
+    margin-top: calc($i/5) + rem;
+  }
+  .mb-#{$i} {
+    margin-bottom: calc($i/5) + rem;
+  }
+}
+
+//Paddings
+$i: 1;
+@for $i from 1 through 40 {
+  .p-#{$i} {
+    padding: calc($i/5) + rem;
+  }
+  .px-#{$i} {
+    padding-left: calc($i/5) + rem;
+    padding-right: calc($i/5) + rem;
+  }
+  .py-#{$i} {
+    padding-top: calc($i/5) + rem;
+    padding-bottom: calc($i/5) + rem;
+  }
+  .pl-#{$i} {
+    padding-left: calc($i/5) + rem;
+  }
+  .pr-#{$i} {
+    padding-right: calc($i/5) + rem;
+  }
+  .pt-#{$i} {
+    padding-top: calc($i/5) + rem;
+  }
+  .pb-#{$i} {
+    padding-bottom: calc($i/5) + rem;
+  }
+}
+
+//Text
+.text-xs {
+  font-size: 0.6rem;
+  line-height: 0.8rem;
+}
+
+.text-sm {
+  font-size: 0.7rem;
+  line-height: 1rem;
+}
+
+.text-md {
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+}
+
+.text-lg {
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+}
+
+.text-xl {
+  font-size: 1rem;
+  line-height: 1.6rem;
+}
+
+.text-2xl {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+}
+
+.text-3xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-4xl {
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+}
+
+.text-5xl {
+  font-size: 2.4rem;
+  line-height: 3rem;
+}
+
+.text-6xl {
+  font-size: 3rem;
+  line-height: 3.6rem;
+}
+
+.text-7xl {
+  font-size: 3.3rem;
+  line-height: 4.2rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+//Colors
+$bunyo-black: #0d0d0d;
+$bunyo-white: #fff;
+$bunyo-off-white: #fafafa;
+$sustainability-green: #069257;
+$bunyo-care-blue: #205dd3;
+$gray-600: #5c5e61;
+$gray-500: #7c838d;
+$gray-400: #bac0c7;
+
+//Spacing
+//Shadows
+.base-shadow {
+  text-shadow: 0px 0px 10px rgb(0 0 0 / 5%), 0px 1px 13px rgb(0 0 0 / 6%);
+}
