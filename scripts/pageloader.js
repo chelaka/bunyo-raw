@@ -3,6 +3,7 @@ window.addEventListener("load", function () {
   let isLoaded = false;
   let isLoadingAnimationEnd = false;
   const imgLoad = imagesLoaded(images);
+  let revealText = document.querySelectorAll(".reveal-text");
 
   let splitWords = function (selector) {
     var elements = document.querySelectorAll(selector);
@@ -65,45 +66,70 @@ window.addEventListener("load", function () {
   };
 
   splitLines(".reveal-text");
+
+  // const textTimeline = gsap.timeline();
+  // revealText.forEach((element) => {
+  //   const lines = element.querySelectorAll(".words");
+  //   textTimeline.set(element, { autoAlpha: 1 });
+  //   textTimeline.fromTo(
+  //     lines,
+  //     {
+  //       yPercent: 100,
+  //     },
+  //     {
+  //       yPercent: 0,
+  //       ease: Power3.out,
+  //       stagger: 0.15,
+  //       duration: 0.75,
+  //     }
+  //   );
+  // });
+
   gsap.registerPlugin(ScrollTrigger);
 
   const entranceAnimation = () => {
-    const tl = gsap.timeline({
-      onComplete: () => {
-        let revealText = document.querySelectorAll(".reveal-text");
-
-        let revealLines = revealText.forEach((element) => {
-          const lines = element.querySelectorAll(".words");
-
-          let tlReveal = gsap.timeline();
-          tlReveal.set(element, { autoAlpha: 1 });
-          tlReveal.from(lines, 1, {
-            yPercent: 100,
-            ease: Power2.out,
-            stagger: 0.1,
-          });
-        });
-      },
-    });
+    const tl = gsap.timeline({});
     tl.to(".logo", {
       y: -100,
-      duration: 1,
-      ease: "power2.inOut",
+      duration: 0.6,
+      ease: "power3.inOut",
     })
       .to(
         ".loader",
         {
           yPercent: -100,
           duration: 1,
-          ease: "power4.inOut",
+          ease: "power3.inOut",
         },
         0
       )
       .fromTo(
-        ".hero",
-        { backgroundSize: "125%" },
-        { backgroundSize: "100%", duration: 1.4, ease: "power1.inOut" },
-        "-=1.3"
+        ".line .words",
+        {
+          yPercent: 100,
+        },
+        {
+          yPercent: 0,
+          ease: "power1.inOut",
+          stagger: 0,
+          duration: 0.9,
+        },
+        "<+=0.2"
+      )
+      .fromTo(
+        ".hero-background",
+
+        { backgroundSize: "130%" },
+        { backgroundSize: "100%", duration: 1.25, ease: "power2.inOut" },
+        "<-=0.25"
+      )
+      .fromTo(
+        ".hero-note",
+        {
+          opacity: 0,
+        },
+        { opacity: 1, duration: 0.75, ease: "power1.inOut" },
+        "-=0.5"
       );
   };
 
@@ -115,20 +141,19 @@ window.addEventListener("load", function () {
           if (isLoaded) entranceAnimation();
         },
       })
-      // .from(".loader", {
-      //   yPercent: 100,
-      //   ease: "power3.inOut",
-      //   duration: 1,
-      // })
-      .from(
+      .fromTo(
         ".logo",
         {
           opacity: 0,
-          y: 30,
-          duration: 0.6,
-          ease: "power5.out",
+          y: 40,
         },
-        0.5
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power2.out",
+        },
+        0
       );
   };
 
