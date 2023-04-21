@@ -28,7 +28,7 @@ $i: 1;
 //Margins
 
 $i: 1;
-@for $i from 1 through 40 {
+@for $i from 1 through 50 {
   .m-#{$i} {
     margin: calc($i/5) + rem;
   }
@@ -56,7 +56,7 @@ $i: 1;
 
 //Paddings
 $i: 1;
-@for $i from 1 through 40 {
+@for $i from 1 through 50 {
   .p-#{$i} {
     padding: calc($i/5) + rem;
   }

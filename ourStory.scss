@@ -1,0 +1,99 @@
+@use "_designSystem.scss" as *;
+
+.hero-background {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.29), rgba(0, 0, 0, 0.29)),
+    url("assets/heroStory.png");
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+
+.video-break-section {
+  .title {
+    color: $bunyo-white;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    z-index: 2;
+  }
+  .description {
+    color: $bunyo-white;
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 2;
+  }
+  .video-wrapper {
+    background-color: #0000001e;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    height: 26rem;
+    video {
+      width: 100%;
+    }
+    &:before {
+      content: " ";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      border-radius: 0.4rem;
+      background: linear-gradient(rgb(0 0 0 / 60%), rgb(0 0 0 / 60%));
+    }
+  }
+}
+
+.values-section {
+  .value {
+    padding-right: 8rem;
+    .number {
+      @extend .text-4xl;
+      margin-bottom: 2.2rem;
+    }
+  }
+}
+
+.team-section {
+  .member {
+    .photo {
+      margin-bottom: 2.2rem;
+    }
+    .designation {
+      @extend .text-lg;
+      color: $gray-600;
+    }
+  }
+}
+
+.community-section {
+  background-color: $bunyo-black;
+  color: $bunyo-off-white;
+  &:before {
+    content: " ";
+    width: 100%;
+    height: 100%;
+    display: block;
+    opacity: 5%;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    background-size: 100px 100px;
+    background-image: linear-gradient(to right, white 1px, transparent 1px),
+      linear-gradient(to bottom, white 1px, transparent 1px);
+  }
+  .community-members {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-gap: 1.5rem;
+  }
+}
+
+.about-you-section {
+  .img-frame {
+    height: 40rem;
+    max-height: unset;
+  }
+}
