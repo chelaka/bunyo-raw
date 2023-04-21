@@ -1,6 +1,6 @@
 @use "_designSystem.scss" as *;
 
-.hero-sustainability {
+.hero-background {
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
     url("assets/heroSustainability.png");
   background-size: cover;
@@ -95,8 +95,7 @@
     }
   }
   .service-image {
-    border-radius: 8px;
-    overflow: hidden;
+    max-height: 7rem;
   }
   .service-headline {
     @extend .text-4xl;

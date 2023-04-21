@@ -2574,7 +2574,7 @@
   text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05), 0px 1px 13px rgba(0, 0, 0, 0.06);
 }
 
-.hero-sustainability {
+.hero-background {
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("assets/heroSustainability.png");
   background-size: cover;
   background-position: center center;
@@ -2642,8 +2642,7 @@
   margin-bottom: 0rem;
 }
 .sustainability-services .service-image {
-  border-radius: 8px;
-  overflow: hidden;
+  max-height: 7rem;
 }
 .sustainability-services .service-description {
   color: #5c5e61;
