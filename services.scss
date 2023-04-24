@@ -1,0 +1,111 @@
+@use "_designSystem.scss" as *;
+
+.hero-background {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url("assets/heroServices.png");
+}
+
+.bunyo-care-section {
+  .services-summary-section {
+    .img-frame {
+      max-height: unset;
+      min-height: 26.4rem;
+    }
+    .page-aside-title {
+      color: $bunyo-black;
+    }
+  }
+
+  .mini-para {
+    padding-right: 0.5rem;
+  }
+  .services-summary-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    list-style-image: url("assets/icons/bunyoCare.svg");
+    .service {
+      flex: 1 1 50%;
+      margin-bottom: 1.8rem;
+      padding-left: 0.5rem;
+    }
+  }
+  .other-services-summary-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    .service {
+      flex: 1 1 50%;
+      margin-bottom: 1.8rem;
+    }
+  }
+  .row-4 {
+    .warranty-details {
+      border-radius: 0.4rem;
+      padding: 3rem 2rem;
+      background-color: $bunyo-care-background-blue;
+      color: $bunyo-white;
+      .mini-para {
+        .mini-para-description {
+          color: $bunyo-white;
+        }
+      }
+    }
+  }
+
+  .row-6 {
+    .buyback-calculator {
+      background-color: $bunyo-white;
+      border-radius: 0.4rem;
+      padding: 1.8rem;
+      box-shadow: 0px 25px 50px -12px #00000040;
+      .form {
+        margin-bottom: 4rem;
+      }
+      .form-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1.25rem;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .row-7 {
+    .sustainability-list {
+      margin-top: 3rem;
+      list-style: none;
+      list-style-image: url("assets/icons/check-circle.svg");
+      padding-left: 24px;
+      .service {
+        padding-left: 2rem;
+        margin-bottom: 1.2rem;
+      }
+    }
+  }
+
+  .row-8 {
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .row-9 {
+    .office-interior-section {
+      .left-images {
+        display: flex;
+        flex-direction: column;
+        img {
+          flex: 1;
+          margin-bottom: 1.1rem;
+          border-radius: 0.4rem;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}

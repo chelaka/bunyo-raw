@@ -1,0 +1,60 @@
+@use "_designSystem.scss" as *;
+
+.testimonial-slider {
+  position: relative;
+  .hidden {
+    opacity: 0;
+  }
+  .visible {
+    opacity: 1;
+  }
+  .slides {
+    height: 20rem;
+    position: relative;
+    .slide {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all 1s;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      transition: all 0.25s ease-in-out;
+    }
+  }
+  .slide-thumbs {
+    display: flex;
+    border-bottom: 1px solid $gray-400;
+    .thumb {
+      padding: 4rem 0 3rem;
+      display: flex;
+      flex: 1 auto;
+      cursor: pointer;
+      img {
+        width: 3.2rem;
+        height: 3.2rem;
+        border-radius: 100%;
+        filter: grayscale(100%);
+      }
+      .info {
+        padding-left: 1.25rem;
+        line-height: 1.4;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .designation {
+          font-size: 0.8rem;
+          color: $gray-600;
+        }
+      }
+      &.active {
+        border-bottom: 3px solid $gray-600;
+        img {
+          filter: none;
+        }
+      }
+    }
+  }
+}

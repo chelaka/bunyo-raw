@@ -3123,7 +3123,7 @@
   line-height: 1.2rem;
 }
 
-.text-lg, .page-aside-title, .footer .newsletter-section .newsletter-signup-form .form-wrapper .email-input, .footer .newsletter-section .newsletter-confirmation, .footer .footnote {
+.text-lg, .page-aside-title, .footer .newsletter-section .newsletter-signup-form .form-wrapper .email-input, .footer .newsletter-section .newsletter-confirmation, .footer .footnote, select {
   font-size: 0.9rem;
   line-height: 1.4rem;
 }
@@ -3175,6 +3175,22 @@
   text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05), 0px 1px 13px rgba(0, 0, 0, 0.06);
 }
 
+select {
+  color: #5c5e61;
+  padding: 1rem 3rem 1rem 1rem;
+  border-radius: 0.4rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  border: 1px solid #bac0c7;
+  font-family: "manrope", sans-serif;
+  line-height: 1.3;
+  font-weight: 600;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAUCAMAAACtdX32AAAAdVBMVEUAAAD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhMdQaAAAAJ3RSTlMAAAECAwQGBwsOFBwkJTg5RUZ4eYCHkJefpaytrsXGy8zW3+Do8vNn0bsyAAAAYElEQVR42tXROwJDQAAA0Ymw1p9kiT+L5P5HVEi3qJn2lcPjtIuzUIJ/rhIGy762N3XaThqMN1ZPALsZPEzG1x8LrFL77DHBnEMxBewz0fJ6LyFHTPL7xhwzWYrJ9z22AqmQBV757MHfAAAAAElFTkSuQmCC);
+  background-position: 100%;
+  background-repeat: no-repeat;
+}
+
 .navbar {
   position: fixed;
   z-index: 2;
@@ -3216,6 +3232,10 @@ body {
   position: relative;
 }
 
+.font-bold {
+  font-weight: 700;
+}
+
 .d-flex {
   display: flex;
 }
@@ -3224,8 +3244,24 @@ body {
   flex-direction: column;
 }
 
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
 .flex-1 {
   flex: 1;
+}
+
+.font-gray {
+  color: #5c5e61;
+}
+
+.font-light-gray {
+  color: #7c838d;
 }
 
 .btn {
@@ -3235,6 +3271,7 @@ body {
   padding: 0.6rem 1.3rem;
   border-radius: 1.8rem;
   cursor: pointer;
+  align-self: flex-start;
 }
 
 .img-frame {
@@ -3242,11 +3279,21 @@ body {
   border-radius: 0.4rem;
   max-height: 26.4rem;
 }
+.img-frame.unset-height {
+  max-height: unset;
+}
 .img-frame img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.care-icon::after {
+  content: url("assets/icons/bunyoCare.svg");
+  position: relative;
+  top: -0.5rem;
+  padding-left: 0.25rem;
 }
 
 .hero {
@@ -3261,6 +3308,9 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 .hero .hero-background:before {
   content: " ";
