@@ -7,8 +7,9 @@ let totalSlides = slides.length;
 let slidePosition = 0;
 
 // Update Position
-function updatePosition() {
+function updatePosition(slidePosition) {
   //   Images
+
   for (let slide of slides) {
     slide.classList.remove("visible");
     slide.classList.add("hidden");

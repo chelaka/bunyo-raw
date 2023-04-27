@@ -85,11 +85,9 @@ window.addEventListener("load", function () {
   //   );
   // });
 
-  gsap.registerPlugin(ScrollTrigger);
-
   const entranceAnimation = () => {
     const tl = gsap.timeline({});
-    tl.to(".logo", {
+    tl.to(".loader .logo", {
       y: -100,
       duration: 0.6,
       ease: "power3.inOut",
@@ -142,7 +140,7 @@ window.addEventListener("load", function () {
         },
       })
       .fromTo(
-        ".logo",
+        ".loader .logo",
         {
           opacity: 0,
           y: 40,

@@ -1,0 +1,404 @@
+@use "_designSystem.scss" as *;
+
+.hero-background {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url("assets/heroFlagship.png");
+}
+
+.flow-selection-section {
+  .flow-selectors {
+    button {
+      padding: 1rem 3rem;
+      position: relative;
+      background-color: $gray-100;
+      color: $bunyo-black;
+      &.active {
+        background-color: $bunyo-black;
+        color: $bunyo-white;
+        position: relative;
+        top: -2px;
+      }
+      &.active:after {
+        bottom: -35px;
+        left: 50%;
+        border: solid transparent;
+        content: "";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-color: rgba(136, 183, 213, 0);
+        border-top-color: $bunyo-black;
+        border-width: 20px;
+        margin-left: -20px;
+      }
+    }
+  }
+}
+
+.mini-flow-selector {
+  background-color: $bunyo-white;
+  border-radius: 20rem;
+  border: 1px solid $gray-400;
+  padding: 0.4rem 0.5rem;
+  position: fixed;
+  z-index: 1;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  button {
+    @extend .text-md;
+    background-color: $bunyo-white;
+    color: $bunyo-black;
+    &.active {
+      background-color: $bunyo-black;
+      color: $bunyo-white;
+    }
+  }
+}
+
+.white-bg {
+  background-color: $bunyo-white;
+}
+
+.flow-content {
+  &.office-flow {
+    home-flow {
+      display: none;
+    }
+  }
+  &.home-flow {
+    office-flow {
+      display: none;
+    }
+  }
+  .image-section {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1.5rem;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "img-1 img-1 img-2 img-2 render render render render render render img-8 img-8"
+      "img-3 img-3 img-4 img-5 render render render render render render img-9 img-9"
+      "img-6 img-6 img-7 img-7 render render render render render render img-10 img-10";
+    .img-1 {
+      grid-area: img-1;
+    }
+    .img-2 {
+      grid-area: img-2;
+    }
+    .img-3 {
+      grid-area: img-3;
+    }
+    .img-4 {
+      grid-area: img-4;
+    }
+    .img-51 {
+      grid-area: img-5;
+    }
+    .img-6 {
+      grid-area: img-6;
+    }
+    .img-7 {
+      grid-area: img-7;
+    }
+    .img-8 {
+      grid-area: img-8;
+    }
+    .img-9 {
+      grid-area: img-9;
+    }
+    .img-10 {
+      grid-area: img-10;
+    }
+    .img-render {
+      grid-area: render;
+      height: 100%;
+      max-height: unset;
+      .img-frame {
+      }
+    }
+  }
+  .flow-intro-section {
+    border-bottom: 1px solid $bunyo-gray;
+    ul {
+      color: $gray-600;
+      list-style: none;
+      list-style-type: none;
+      display: flex;
+      margin-top: 2rem;
+      .benefit {
+        background: url("assets/icons/check-circle.svg") no-repeat 7px 7px
+          transparent;
+        margin-right: 3rem;
+        margin-bottom: 1.2rem;
+        padding-left: 2.2rem;
+        padding-top: 0.1rem;
+      }
+    }
+  }
+  .social-proof-section {
+    .logo-grid {
+      .logo {
+        padding: 0.4rem 2.5rem;
+      }
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .feature-tiles {
+    .tile {
+      cursor: pointer;
+      position: relative;
+      .text-wrapper {
+        position: absolute;
+        scale: (1);
+        padding: 1.2rem;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        color: white;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        .text-frame {
+          max-width: 12rem;
+          .title {
+            margin-bottom: 0.4rem;
+          }
+          .description {
+            @extend .text-md;
+            font-weight: 500;
+          }
+        }
+        &.top {
+          align-items: flex-start;
+        }
+        &.bottom {
+          align-items: flex-end;
+        }
+        &.left {
+          justify-content: flex-start;
+        }
+        &.right {
+          justify-content: flex-end;
+        }
+      }
+      &.small-tile {
+        .text-frame {
+          .title {
+            @extend .text-md;
+          }
+          .description {
+            @extend .text-sm;
+          }
+        }
+      }
+    }
+    .img-frame {
+      max-height: unset;
+      height: 100%;
+    }
+  }
+
+  .tiles-section-1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5rem;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "lumbar lumbar donati"
+      "lumbar lumbar seat";
+    .lumbar-support {
+      grid-area: lumbar;
+    }
+    .donati {
+      grid-area: donati;
+    }
+    .seat-depth {
+      grid-area: seat;
+    }
+  }
+
+  .tiles-section-2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5rem;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "height backrest backrest"
+      "headrest backrest backrest"
+      "armrest armrest footer";
+
+    .height-adjustable {
+      grid-area: height;
+    }
+    .headrest-adjustable {
+      grid-area: headrest;
+    }
+    .backrest-adjustable {
+      grid-area: backrest;
+    }
+    .armrest {
+      grid-area: armrest;
+    }
+    .footer-tile {
+      grid-area: footer;
+      .img-frame {
+        height: auto;
+      }
+    }
+  }
+
+  .best-version-section {
+    .labels {
+      color: $gray-500;
+      .label {
+        margin-bottom: 1.5rem;
+        &.active {
+          color: $bunyo-black;
+        }
+      }
+    }
+    .slides {
+      position: relative;
+      min-height: 18rem;
+      .slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        &.visible {
+          opacity: 1;
+        }
+        .title {
+          @extend .text-4xl;
+          margin-bottom: 2.2rem;
+        }
+      }
+    }
+    .img-break {
+      .nine-five {
+        background-color: $bunyo-black;
+        border-radius: 0.4rem;
+      }
+    }
+  }
+
+  .bunyo-care-section {
+    .services-section {
+      .header {
+        @extend .text-4xl;
+        margin-bottom: 2rem;
+      }
+      .block {
+        margin-bottom: 5rem;
+
+        .services {
+          padding-top: 2rem;
+          border-top: 1px solid $gray-400;
+          .service {
+            padding-right: 2rem;
+          }
+        }
+      }
+    }
+  }
+  .sit-better-section {
+    .sit-better-details {
+      padding: 2.5rem;
+      color: white;
+      background-color: $bunyo-care-blue;
+      border-radius: 0.4rem;
+      background-image: url("assets/flagship/sitBetterBg.svg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      .mini-para-description {
+        color: $gray-100;
+      }
+    }
+  }
+
+  .other-services-section {
+    .service {
+      padding-right: 2rem;
+    }
+  }
+
+  .sustainability-section {
+    .left {
+      background-color: $bunyo-black;
+      padding: 4rem;
+      border-radius: 0.4rem;
+      color: $bunyo-white;
+      .header {
+        padding-right: 12rem;
+      }
+      .service {
+        margin-bottom: 2rem;
+        padding-right: 2rem;
+        .mini-para {
+          .mini-para-title {
+            margin-bottom: 0.2rem;
+          }
+          .mini-para-description {
+            @extend .text-lg;
+            font-weight: 500;
+            color: $gray-500;
+          }
+        }
+        &:nth-last-child(-n + 2) {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .specifications-section {
+    .grid-specs {
+      .grid-specs-section {
+        margin-bottom: 6rem;
+        .record {
+          padding: 1.5rem 0;
+          border-bottom: 1px solid $gray-400;
+          &:first-child {
+            padding: 0 0 1.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  .gallery-section {
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-gap: 1.5rem;
+      grid-template-rows: auto;
+      grid-template-areas:
+        "img-1 img-1 img-2 img-4 img-4 img-5"
+        "img-1 img-1 img-3 img-4 img-4 img-6";
+
+      .img-1 {
+        grid-area: img-1;
+      }
+      .img-2 {
+        grid-area: img-2;
+      }
+      .img-3 {
+        grid-area: img-3;
+      }
+      .img-4 {
+        grid-area: img-4;
+      }
+      .img-5 {
+        grid-area: img-5;
+      }
+      .img-6 {
+        grid-area: img-6;
+      }
+    }
+  }
+}
