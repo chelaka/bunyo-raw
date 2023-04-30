@@ -3118,12 +3118,12 @@
   line-height: 1rem;
 }
 
-.text-md, .footer .slogan, .feature-overlay .slides .slide .text-side .text-wrapper .text-frame .mini-para .mini-para-description {
+.text-md, .footer .slogan, .feature-overlay .f-slides .f-slide .text-side .text-wrapper .text-frame .mini-para .mini-para-description {
   font-size: 0.8rem;
   line-height: 1.2rem;
 }
 
-.text-lg, .page-aside-title, .footer .newsletter-section .newsletter-signup-form .form-wrapper .email-input, .footer .newsletter-section .newsletter-confirmation, .footer .footnote, .feature-overlay .slides .slide .text-side .text-wrapper .text-frame .intro .intro-description, .feature-overlay .slides .slide .text-side .text-wrapper .text-frame .mini-para .mini-para-title, select {
+.text-lg, .page-aside-title, .footer .newsletter-section .newsletter-signup-form .form-wrapper .email-input, .footer .newsletter-section .newsletter-confirmation, .footer .footnote, .feature-overlay .f-slides .f-slide .text-side .text-wrapper .text-frame .intro .intro-description, .feature-overlay .f-slides .f-slide .text-side .text-wrapper .text-frame .mini-para .mini-para-title, select {
   font-size: 0.9rem;
   line-height: 1.4rem;
 }
@@ -3143,7 +3143,7 @@
   line-height: 2rem;
 }
 
-.text-4xl, .para .para-title, .page-intro .page-intro-title, .feature-overlay .slides .slide .text-side .text-wrapper .text-frame .intro .title {
+.text-4xl, .para .para-title, .page-intro .page-intro-title, .feature-overlay .f-slides .f-slide .text-side .text-wrapper .text-frame .intro .title {
   font-size: 1.8rem;
   line-height: 2.4rem;
 }
@@ -3692,11 +3692,11 @@ body {
 .feature-overlay .close-btn img {
   max-width: 100%;
 }
-.feature-overlay .slides {
+.feature-overlay .f-slides {
   width: 100%;
   height: 100%;
 }
-.feature-overlay .slides .slide {
+.feature-overlay .f-slides .f-slide {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -3705,13 +3705,13 @@ body {
   grid-gap: 0rem;
   opacity: 0;
 }
-.feature-overlay .slides .slide.visible {
+.feature-overlay .f-slides .f-slide.visible {
   opacity: 1;
 }
-.feature-overlay .slides .slide .text-side {
+.feature-overlay .f-slides .f-slide .text-side {
   background: #fff;
 }
-.feature-overlay .slides .slide .text-side .text-wrapper {
+.feature-overlay .f-slides .f-slide .text-side .text-wrapper {
   padding: 4.5rem;
   top: 0;
   left: 0;
@@ -3720,36 +3720,36 @@ body {
   height: 100%;
   display: flex;
 }
-.feature-overlay .slides .slide .text-side .text-wrapper .text-frame .intro {
+.feature-overlay .f-slides .f-slide .text-side .text-wrapper .text-frame .intro {
   margin-bottom: 3rem;
 }
-.feature-overlay .slides .slide .text-side .text-wrapper .text-frame .intro .title {
+.feature-overlay .f-slides .f-slide .text-side .text-wrapper .text-frame .intro .title {
   margin-bottom: 0.4rem;
 }
-.feature-overlay .slides .slide .text-side .text-wrapper .text-frame .mini-para {
+.feature-overlay .f-slides .f-slide .text-side .text-wrapper .text-frame .mini-para {
   margin-bottom: 1.5rem;
   padding-right: 2rem;
 }
-.feature-overlay .slides .slide .text-side .text-wrapper .text-frame .mini-para .mini-para-description {
+.feature-overlay .f-slides .f-slide .text-side .text-wrapper .text-frame .mini-para .mini-para-description {
   color: #5c5e61;
 }
-.feature-overlay .slides .slide .text-side .text-wrapper.top {
+.feature-overlay .f-slides .f-slide .text-side .text-wrapper.top {
   align-items: flex-start;
 }
-.feature-overlay .slides .slide .text-side .text-wrapper.bottom {
+.feature-overlay .f-slides .f-slide .text-side .text-wrapper.bottom {
   align-items: flex-end;
 }
-.feature-overlay .slides .slide .text-side .text-wrapper.left {
+.feature-overlay .f-slides .f-slide .text-side .text-wrapper.left {
   justify-content: flex-start;
 }
-.feature-overlay .slides .slide .text-side .text-wrapper.right {
+.feature-overlay .f-slides .f-slide .text-side .text-wrapper.right {
   justify-content: flex-end;
 }
-.feature-overlay .slides .slide .image-side .image-wrapper {
+.feature-overlay .f-slides .f-slide .image-side .image-wrapper {
   width: 100%;
   height: 100%;
 }
-.feature-overlay .slides .slide .image-side .image-wrapper img {
+.feature-overlay .f-slides .f-slide .image-side .image-wrapper img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;

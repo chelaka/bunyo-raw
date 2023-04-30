@@ -1,65 +1,56 @@
 // Variables
 let bestSlides = document.querySelectorAll(
-  ".best-version-section .slides .slide"
+  ".best-version-section .b-slides .b-slide"
 );
 let bestThumbs = document.querySelectorAll(
   ".best-version-section .labels .label"
 );
 let totalBestSlides = bestSlides.length;
 let bestSlidePosition = 0;
-
-startAutoPlay();
-
-function startAutoPlay(immediate) {
-  if (immediate != null) {
-    immediate = false;
-  }
-
-  if (immediate) {
-    gotoNextSlide();
-  }
-  TweenLite.delayedCall(4, play);
-}
-
-function stopAutoPlay() {
-  isAutoPlay = false;
-  TweenLite.killDelayedCallsTo(play);
-}
-
-function gotoNextSlide() {
-  var slideToGo = bestSlidePosition + 1;
-  if (slideToGo >= totalBestSlides) {
-    slideToGo = 0;
-  }
-  stopAutoPlay();
-  gotoSlide(slideToGo, 1, "next");
-}
-
-function play() {
-  gotoNextSlide();
-  TweenLite.delayedCall(4, play);
-}
+let currentInterval;
 
 // Update Position
-function updatePosition() {
+function updateBestPosition(slidePosition) {
   //   Images
-  for (let slide of bestSlides) {
+  bestSlides.forEach((slide, slidePosition) => {
     slide.classList.remove("visible");
     slide.classList.add("hidden");
-  }
-  bestSlides[bestSlidePosition].classList.remove("hidden");
-  bestSlides[bestSlidePosition].classList.add("visible");
+  });
+
+  bestSlides[slidePosition].classList.remove("hidden");
+  bestSlides[slidePosition].classList.add("visible");
   //   Dots
+
   for (let thumb of bestThumbs) {
     thumb.className = thumb.className.replace(" active", "");
   }
-  bestThumbs[bestSlidePosition].classList.add("active");
+  bestThumbs[slidePosition].classList.add("active");
 }
 
 // Dot Position
 bestThumbs.forEach((thumb, thumbPosition) => {
   thumb.addEventListener("click", () => {
+    clearInterval(currentInterval);
+    const intervalClick = setInterval(function () {
+      nextSlide();
+    }, 10000);
+    currentInterval = intervalClick;
     bestSlidePosition = thumbPosition;
-    updatePosition(thumbPosition);
+    updateBestPosition(thumbPosition);
   });
 });
+
+function nextSlide() {
+  if (bestSlidePosition < bestSlides.length - 1) {
+    bestSlidePosition++;
+  } else {
+    bestSlidePosition = 0;
+  }
+  updateBestPosition(bestSlidePosition);
+}
+
+const interval = setInterval(function () {
+  nextSlide();
+}, 10000);
+
+currentInterval = interval;

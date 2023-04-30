@@ -3137,12 +3137,12 @@
   line-height: 1.6rem;
 }
 
-.text-3xl {
+.text-3xl, .flow-content .financially-smart-section .calculations .line-footer {
   font-size: 1.5rem;
   line-height: 2rem;
 }
 
-.text-4xl, .flow-content .best-version-section .slides .slide .title, .flow-content .bunyo-care-section .services-section .header {
+.text-4xl, .flow-content .best-version-section .b-slides .b-slide .title, .flow-content .bunyo-care-section .services-section .header {
   font-size: 1.8rem;
   line-height: 2.4rem;
 }
@@ -3324,6 +3324,16 @@ select {
   cursor: pointer;
   position: relative;
 }
+.flow-content .feature-tiles .tile .img-frame:after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.4rem;
+  background: linear-gradient(360deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 106.57%);
+}
 .flow-content .feature-tiles .tile .text-wrapper {
   position: absolute;
   scale: 1;
@@ -3402,29 +3412,65 @@ select {
 .flow-content .tiles-section-2 .footer-tile .img-frame {
   height: auto;
 }
+@keyframes widthAnimation {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
 .flow-content .best-version-section .labels {
   color: #7c838d;
 }
 .flow-content .best-version-section .labels .label {
-  margin-bottom: 1.5rem;
+  padding: 1.5rem 1rem 1.5rem 0;
+  position: relative;
+  cursor: pointer;
+}
+.flow-content .best-version-section .labels .label:first-child {
+  padding-top: 0;
+}
+.flow-content .best-version-section .labels .label:before {
+  content: " ";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background-color: #eeeeee;
 }
 .flow-content .best-version-section .labels .label.active {
   color: #0d0d0d;
 }
-.flow-content .best-version-section .slides {
+.flow-content .best-version-section .labels .label.active:after {
+  content: " ";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1.5px;
+  background-color: #0d0d0d;
+  animation: widthAnimation 10s linear;
+}
+.flow-content .best-version-section .b-slides {
   position: relative;
   min-height: 18rem;
 }
-.flow-content .best-version-section .slides .slide {
+.flow-content .best-version-section .b-slides .b-slide {
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
+  transition: all 0.3s ease-in-out;
 }
-.flow-content .best-version-section .slides .slide.visible {
+.flow-content .best-version-section .b-slides .b-slide.visible {
   opacity: 1;
 }
-.flow-content .best-version-section .slides .slide .title {
+.flow-content .best-version-section .b-slides .b-slide.hidden {
+  opacity: 0;
+  z-index: -1;
+}
+.flow-content .best-version-section .b-slides .b-slide .title {
   margin-bottom: 2.2rem;
 }
 .flow-content .best-version-section .img-break .nine-five {
@@ -3455,6 +3501,25 @@ select {
 }
 .flow-content .sit-better-section .sit-better-details .mini-para-description {
   color: #eeeeee;
+}
+.flow-content .financially-smart-section .img-frame {
+  height: 70%;
+}
+.flow-content .financially-smart-section .calculations {
+  margin-bottom: 3rem;
+}
+.flow-content .financially-smart-section .calculations .line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.flow-content .financially-smart-section .calculations .line .value {
+  color: #5c5e61;
+}
+.flow-content .financially-smart-section .calculations .line-footer {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
 }
 .flow-content .other-services-section .service {
   padding-right: 2rem;

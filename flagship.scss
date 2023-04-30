@@ -152,6 +152,22 @@
     .tile {
       cursor: pointer;
       position: relative;
+      .img-frame {
+        &:after {
+          content: " ";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 0.4rem;
+          background: linear-gradient(
+            360deg,
+            rgba(0, 0, 0, 0.3) 0%,
+            rgba(0, 0, 0, 0) 106.57%
+          );
+        }
+      }
       .text-wrapper {
         position: absolute;
         scale: (1);
@@ -252,26 +268,63 @@
     }
   }
 
+  @keyframes widthAnimation {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
   .best-version-section {
     .labels {
       color: $gray-500;
       .label {
-        margin-bottom: 1.5rem;
+        padding: 1.5rem 1rem 1.5rem 0;
+        position: relative;
+        cursor: pointer;
+        &:first-child {
+          padding-top: 0;
+        }
+        &:before {
+          content: " ";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 1.5px;
+          background-color: $gray-100;
+        }
         &.active {
           color: $bunyo-black;
+          &:after {
+            content: " ";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 1.5px;
+            background-color: $bunyo-black;
+            animation: widthAnimation 10s linear;
+          }
         }
       }
     }
-    .slides {
+    .b-slides {
       position: relative;
       min-height: 18rem;
-      .slide {
+      .b-slide {
         position: absolute;
         top: 0;
         left: 0;
         opacity: 0;
+        transition: all 0.3s ease-in-out;
         &.visible {
           opacity: 1;
+        }
+        &.hidden {
+          opacity: 0;
+          z-index: -1;
         }
         .title {
           @extend .text-4xl;
@@ -317,6 +370,30 @@
       background-repeat: no-repeat;
       .mini-para-description {
         color: $gray-100;
+      }
+    }
+  }
+
+  .financially-smart-section {
+    .img-frame {
+      height: 70%;
+    }
+    .calculations {
+      margin-bottom: 3rem;
+      .line {
+        display: flex;
+        justify-content: space-between;
+        // font-weight: bold;
+        margin-bottom: 0.5rem;
+        .value {
+          color: $gray-600;
+        }
+      }
+      .line-footer {
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        @extend .text-3xl;
       }
     }
   }

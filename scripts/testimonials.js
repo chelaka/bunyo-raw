@@ -1,21 +1,23 @@
 // Variables
-let slides = document.querySelectorAll(".testimonial-slider .slides .slide");
-let thumbs = document.querySelectorAll(
-  ".testimonial-slider .slide-thumbs .thumb"
+let tSlides = document.querySelectorAll(
+  ".testimonial-slider .t-slides .t-slide"
 );
-let totalSlides = slides.length;
+let thumbs = document.querySelectorAll(
+  ".testimonial-slider .t-slide-thumbs .thumb"
+);
+let totalSlides = tSlides.length;
 let slidePosition = 0;
 
 // Update Position
 function updatePosition(slidePosition) {
   //   Images
-
-  for (let slide of slides) {
+  tSlides.forEach((slide, slidePosition) => {
     slide.classList.remove("visible");
     slide.classList.add("hidden");
-  }
-  slides[slidePosition].classList.remove("hidden");
-  slides[slidePosition].classList.add("visible");
+  });
+
+  tSlides[slidePosition].classList.remove("hidden");
+  tSlides[slidePosition].classList.add("visible");
   //   Dots
   for (let thumb of thumbs) {
     thumb.className = thumb.className.replace(" active", "");
