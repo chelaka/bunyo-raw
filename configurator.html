@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Configurator : Bunyo</title>
+
+    <link rel="stylesheet" href="configurator.css" />
+    <link rel="stylesheet" href="global.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- <div class="loader">
+      <div class="logo text-5xl">Bunyo®</div>
+    </div> -->
+
+    <div class="smooth-wrapper" id="smooth-wrapper" data-scroll-container>
+      <div class="smooth-content">
+        <div class="configurator">
+          <div class="grid-12">
+            <div class="col-5 left position-relative">
+              <div class="form-wrapper">
+                <div class="header p-7">
+                  <div class="logo mb-3">
+                    <img src="assets/logos/text-black.svg" alt="" />
+                  </div>
+                  <div class="intro text-md mb-8">
+                    Pick a colour and configuration to suit your style. A
+                    sitting experience like no other
+                  </div>
+                  <div class="c-steps-thumbs pb-8">
+                    <div class="c-steps-thumb active">1. Model</div>
+                    <div class="c-steps-thumb">2. Accessories</div>
+                    <div class="c-steps-thumb">3. Summary</div>
+                  </div>
+
+                  <div class="c-step-configs">
+                    <div class="c-step-config c-step-1 active">
+                      <div class="config config-backrest">
+                        <div class="title">
+                          <div class="label">
+                            Backrest:<span class="selection">Mesh</span>
+                          </div>
+                        </div>
+                        <div class="options double-col">
+                          <div class="option">
+                            <div class="option-image">
+                              <img
+                                src="assets/renders/placeholder.png"
+                                alt=""
+                              />
+                            </div>
+                            <div class="option-details">
+                              <div class="header">
+                                <div class="label">Comfort</div>
+                                <div class="add-on-price">€10</div>
+                              </div>
+                              <div class="description">
+                                Description about what the comfort backrest is
+                              </div>
+                            </div>
+                          </div>
+                          <div class="option">
+                            <div class="option-image">
+                              <img
+                                src="assets/renders/placeholder.png"
+                                alt=""
+                              />
+                            </div>
+                            <div class="option-details">
+                              <div class="header">
+                                <div class="label">Comfort</div>
+                                <div class="add-on-price">€10</div>
+                              </div>
+                              <div class="description">
+                                Description about what the comfort backrest is
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="config config-footrest">
+                        <div class="title">
+                          <div class="label">
+                            Footrest:<span class="selection"
+                              >Black Plastic</span
+                            >
+                          </div>
+                        </div>
+                        <div class="options double-col">
+                          <div class="option">
+                            <div class="option-image">
+                              <img
+                                src="assets/renders/placeholder.png"
+                                alt=""
+                              />
+                            </div>
+                            <div class="option-details">
+                              <div class="header">
+                                <div class="label">Black plastic</div>
+                                <div class="add-on-price">€10</div>
+                              </div>
+                              <div class="description">
+                                Description about what the comfort backrest is
+                              </div>
+                            </div>
+                          </div>
+                          <div class="option">
+                            <div class="option-image">
+                              <img
+                                src="assets/renders/placeholder.png"
+                                alt=""
+                              />
+                            </div>
+                            <div class="option-details">
+                              <div class="header">
+                                <div class="label">Shined Aluminium</div>
+                                <div class="add-on-price">€10</div>
+                              </div>
+                              <div class="description">
+                                Description about what the comfort backrest is
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="c-step-config c-step-2">
+                      <div class="config config-headrest">
+                        <div class="title">
+                          <div class="label">
+                            Headrest:<span class="selection">Mesh</span>
+                          </div>
+                        </div>
+                        <div class="options single-col">
+                          <div class="option">
+                            <div class="option-image">
+                              <img
+                                src="assets/renders/placeholder.png"
+                                alt=""
+                              />
+                            </div>
+                            <div class="option-details">
+                              <div class="header">
+                                <div class="label">Comfort</div>
+                                <div class="add-on-price">€10</div>
+                              </div>
+                              <div class="description">
+                                Description about what the comfort backrest is
+                              </div>
+                            </div>
+                          </div>
+                          <div class="option">
+                            <div class="option-image">
+                              <img
+                                src="assets/renders/placeholder.png"
+                                alt=""
+                              />
+                            </div>
+                            <div class="option-details">
+                              <div class="header">
+                                <div class="label">Comfort</div>
+                                <div class="add-on-price">€10</div>
+                              </div>
+                              <div class="description">
+                                Description about what the comfort backrest is
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="config config-armrest">
+                        <div class="title">
+                          <div class="label">
+                            Armrest:<span class="selection">Black Plastic</span>
+                          </div>
+                        </div>
+                        <div class="options single-col">
+                          <div class="option">
+                            <div class="option-image">
+                              <img
+                                src="assets/renders/placeholder.png"
+                                alt=""
+                              />
+                            </div>
+                            <div class="option-details">
+                              <div class="header">
+                                <div class="label">Black plastic</div>
+                                <div class="add-on-price">€10</div>
+                              </div>
+                              <div class="description">
+                                Description about what the comfort backrest is
+                              </div>
+                            </div>
+                          </div>
+                          <div class="option">
+                            <div class="option-image">
+                              <img
+                                src="assets/renders/placeholder.png"
+                                alt=""
+                              />
+                            </div>
+                            <div class="option-details">
+                              <div class="header">
+                                <div class="label">Shined Aluminium</div>
+                                <div class="add-on-price">€10</div>
+                              </div>
+                              <div class="description">
+                                Description about what the comfort backrest is
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="c-step-config c-step-3">
+                      <div class="config config-backrest">
+                        <div class="title">
+                          <div class="label">
+                            Backrest:<span class="selection">Mesh</span>
+                          </div>
+                        </div>
+                        <div class="options double-col">
+                          <div class="option">
+                            <div class="option-image">
+                              <img
+                                src="assets/renders/placeholder.png"
+                                alt=""
+                              />
+                            </div>
+                            <div class="option-details">
+                              <div class="header">
+                                <div class="label">Comfort</div>
+                                <div class="add-on-price">€10</div>
+                              </div>
+                              <div class="description">
+                                Description about what the comfort backrest is
+                              </div>
+                            </div>
+                          </div>
+                          <div class="option">
+                            <div class="option-image">
+                              <img
+                                src="assets/renders/placeholder.png"
+                                alt=""
+                              />
+                            </div>
+                            <div class="option-details">
+                              <div class="header">
+                                <div class="label">Comfort</div>
+                                <div class="add-on-price">€10</div>
+                              </div>
+                              <div class="description">
+                                Description about what the comfort backrest is
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="config config-footrest">
+                        <div class="title">
+                          <div class="label">
+                            Footrest:<span class="selection"
+                              >Black Plastic</span
+                            >
+                          </div>
+                        </div>
+                        <div class="options double-col">
+                          <div class="option">
+                            <div class="option-image">
+                              <img
+                                src="assets/renders/placeholder.png"
+                                alt=""
+                              />
+                            </div>
+                            <div class="option-details">
+                              <div class="header">
+                                <div class="label">Black plastic</div>
+                                <div class="add-on-price">€10</div>
+                              </div>
+                              <div class="description">
+                                Description about what the comfort backrest is
+                              </div>
+                            </div>
+                          </div>
+                          <div class="option">
+                            <div class="option-image">
+                              <img
+                                src="assets/renders/placeholder.png"
+                                alt=""
+                              />
+                            </div>
+                            <div class="option-details">
+                              <div class="header">
+                                <div class="label">Shined Aluminium</div>
+                                <div class="add-on-price">€10</div>
+                              </div>
+                              <div class="description">
+                                Description about what the comfort backrest is
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="c-footer-wrapper">
+                  <div class="c-footer m-7">
+                    <div class="c-footer-upper px-5 py-5">
+                      <div class="row quantity-row text-md mb-5">
+                        <div class="label">Quantity</div>
+                        <div class="quanity-selector"></div>
+                      </div>
+                      <div class="row total-row text-lg">
+                        <div class="label">Your Total</div>
+                        <div class="total">
+                          €400 <span class="including-BTW">incl. BTW</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="c-footer-lower p-5">
+                      <button class="btn next-btn">Next Step</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-7 right">
+              <div class="wrapper gray-gradient p-10 product-wrapper">
+                <div class="header mb-10 d-flex">
+                  <div class="icon mr-3">
+                    <img src="assets/icons/message-circle.svg" alt="" />
+                  </div>
+                  <div>
+                    <div class="text-xs">Have a question?</div>
+                    <div class="text-xs font-gray">
+                      Get in touch with a Bunyo Success Manager
+                    </div>
+                  </div>
+                </div>
+                <div class="product">
+                  <!-- <img src="assets/renders/placeholder.png" alt="" /> -->
+                </div>
+                <div class="footer-services">
+                  <ul class="services-list">
+                    <li class="service">
+                      Free assembled delivery within 5 working days
+                    </li>
+                    <li class="service">10 Year full service warranty</li>
+                    <li class="service">
+                      Free trial fit and return within 30 days
+                    </li>
+                    <li class="service">NEN-EN 1335 certified</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+        <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+        <script src="scripts/configurator.js"></script>
+        <script src="scripts/pageloader.js"></script>
+      </div>
+    </div>
+  </body>
+</html>

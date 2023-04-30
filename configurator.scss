@@ -1,0 +1,186 @@
+@use "_designSystem.scss" as *;
+
+.configurator {
+  height: 100vh;
+  .grid-12,
+  .left,
+  .right,
+  .product-wrapper {
+    height: 100%;
+    grid-gap: 0;
+  }
+  .left {
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+    .form-wrapper {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      .header {
+        flex: 1 1 auto;
+        overflow-y: auto;
+        .logo {
+          max-width: 95px;
+        }
+      }
+      .c-step-configs {
+        flex: 1;
+        position: relative;
+
+        .c-step-config {
+          & .active {
+            opacity: 1;
+          }
+          &:not(.active) {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            opacity: 0;
+            z-index: -1;
+            top: 0;
+            left: 0;
+          }
+          transition: all 1s;
+          background-position: center center;
+          background-repeat: no-repeat;
+          transition: all 0.35s ease-in-out;
+          .config {
+            margin-top: 1.5rem;
+            .title {
+              @extend .text-md;
+              margin-bottom: 0.8rem;
+
+              .selection {
+                color: $gray-600;
+              }
+            }
+            .options {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: space-between;
+              &.single-col {
+                .option {
+                  flex: 1 1 100%;
+                }
+              }
+              &.double-col {
+                .option {
+                  flex: 0 1 49%;
+                }
+              }
+              .option {
+                display: flex;
+                padding: 0.7rem;
+                border-radius: 0.4rem;
+                border: 2px solid $gray-100;
+                margin-bottom: 0.6rem;
+                &.active {
+                  background-color: $gray-50;
+                  border: 2px solid $gray-600;
+                }
+                .option-image {
+                  margin-right: 0.5rem;
+                  img {
+                    width: 2rem;
+                    height: 2rem;
+                    border-radius: 2rem;
+                    overflow: hidden;
+                    object-fit: cover;
+                  }
+                }
+                .option-details {
+                  flex: 1;
+                  .header {
+                    display: flex;
+                    @extend .text-sm;
+                    margin-bottom: 0.2rem;
+                    .label {
+                      flex: 1 1 auto;
+                    }
+                  }
+                  .description {
+                    @extend .text-xs;
+                    color: $gray-600;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .c-steps-thumbs {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        border-bottom: 1px solid $gray-400;
+        .c-steps-thumb {
+          // flex: 1 1 33%;
+          @extend .text-lg;
+          color: $gray-500;
+          cursor: pointer;
+          &.active {
+            color: $bunyo-black;
+          }
+        }
+      }
+      .c-footer-wrapper {
+        .c-footer {
+          background-color: $gray-100;
+          border-radius: 0.4rem;
+          .c-footer-upper {
+            border-bottom: 1px solid $gray-400;
+            .row {
+              display: flex;
+              justify-content: space-between;
+            }
+          }
+          .c-footer-lower {
+            .next-btn {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .right {
+    .product-wrapper {
+      display: flex;
+      flex-direction: column;
+      .header {
+        cursor: pointer;
+      }
+      .product {
+        flex: 1;
+        img {
+          max-width: 100%;
+        }
+      }
+      .footer-services {
+        .services-list {
+          @extend .text-sm;
+          list-style: none;
+          list-style-type: none;
+          display: flex;
+          flex-wrap: wrap;
+          margin-top: 2rem;
+          .service {
+            background: url("assets/icons/check-circle.svg") no-repeat 7px 7px
+              transparent;
+            margin-bottom: 1.2rem;
+            padding-left: 2.2rem;
+            padding-top: 0.4rem;
+            height: 2rem;
+            &:nth-child(odd) {
+              flex: 1 0 60%;
+            }
+            &:nth-child(even) {
+              flex: 1 0 40%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
