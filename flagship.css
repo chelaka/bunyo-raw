@@ -3112,12 +3112,12 @@
   line-height: 0.8rem;
 }
 
-.text-sm, .flow-content .feature-tiles .tile.small-tile .text-frame .description {
+.text-sm, .flow-content .image-section .feature-tiles .tile.small-tile .text-frame .description {
   font-size: 0.7rem;
   line-height: 1rem;
 }
 
-.text-md, .mini-flow-selector button, .flow-content .feature-tiles .tile .text-wrapper .text-frame .description, .flow-content .feature-tiles .tile.small-tile .text-frame .title {
+.text-md, .mini-flow-selector button, .flow-content .image-section .feature-tiles .tile .text-wrapper .text-frame .description, .flow-content .image-section .feature-tiles .tile.small-tile .text-frame .title {
   font-size: 0.8rem;
   line-height: 1.2rem;
 }
@@ -3297,34 +3297,34 @@ select {
   height: 100%;
   max-height: unset;
 }
-.flow-content .flow-intro-section {
+.flow-content .image-section .flow-intro-section {
   border-bottom: 1px solid #d6d6d6;
 }
-.flow-content .flow-intro-section ul {
+.flow-content .image-section .flow-intro-section ul {
   color: #5c5e61;
   list-style: none;
   list-style-type: none;
   display: flex;
   margin-top: 2rem;
 }
-.flow-content .flow-intro-section ul .benefit {
+.flow-content .image-section .flow-intro-section ul .benefit {
   background: url("assets/icons/check-circle.svg") no-repeat 7px 7px transparent;
   margin-right: 3rem;
   margin-bottom: 1.2rem;
   padding-left: 2.2rem;
   padding-top: 0.1rem;
 }
-.flow-content .social-proof-section .logo-grid .logo {
+.flow-content .image-section .social-proof-section .logo-grid .logo {
   padding: 0.4rem 2.5rem;
 }
-.flow-content .social-proof-section .logo-grid img {
+.flow-content .image-section .social-proof-section .logo-grid img {
   max-width: 100%;
 }
-.flow-content .feature-tiles .tile {
+.flow-content .image-section .feature-tiles .tile {
   cursor: pointer;
   position: relative;
 }
-.flow-content .feature-tiles .tile .img-frame:after {
+.flow-content .image-section .feature-tiles .tile .img-frame:after {
   content: " ";
   position: absolute;
   top: 0;
@@ -3334,7 +3334,7 @@ select {
   border-radius: 0.4rem;
   background: linear-gradient(360deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 106.57%);
 }
-.flow-content .feature-tiles .tile .text-wrapper {
+.flow-content .image-section .feature-tiles .tile .text-wrapper {
   position: absolute;
   scale: 1;
   padding: 1.2rem;
@@ -3346,45 +3346,45 @@ select {
   height: 100%;
   display: flex;
 }
-.flow-content .feature-tiles .tile .text-wrapper .text-frame {
+.flow-content .image-section .feature-tiles .tile .text-wrapper .text-frame {
   max-width: 12rem;
 }
-.flow-content .feature-tiles .tile .text-wrapper .text-frame .title {
+.flow-content .image-section .feature-tiles .tile .text-wrapper .text-frame .title {
   margin-bottom: 0.4rem;
 }
-.flow-content .feature-tiles .tile .text-wrapper .text-frame .description {
+.flow-content .image-section .feature-tiles .tile .text-wrapper .text-frame .description {
   font-weight: 500;
 }
-.flow-content .feature-tiles .tile .text-wrapper.top {
+.flow-content .image-section .feature-tiles .tile .text-wrapper.top {
   align-items: flex-start;
 }
-.flow-content .feature-tiles .tile .text-wrapper.bottom {
+.flow-content .image-section .feature-tiles .tile .text-wrapper.bottom {
   align-items: flex-end;
 }
-.flow-content .feature-tiles .tile .text-wrapper.left {
+.flow-content .image-section .feature-tiles .tile .text-wrapper.left {
   justify-content: flex-start;
 }
-.flow-content .feature-tiles .tile .text-wrapper.right {
+.flow-content .image-section .feature-tiles .tile .text-wrapper.right {
   justify-content: flex-end;
 }
-.flow-content .feature-tiles .img-frame {
+.flow-content .image-section .feature-tiles .img-frame {
   max-height: unset;
   height: 100%;
 }
-.flow-content .tiles-section-1 {
+.flow-content .image-section .tiles-section-1 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1.5rem;
   grid-template-rows: auto;
   grid-template-areas: "lumbar lumbar donati" "lumbar lumbar seat";
 }
-.flow-content .tiles-section-1 .lumbar-support {
+.flow-content .image-section .tiles-section-1 .lumbar-support {
   grid-area: lumbar;
 }
-.flow-content .tiles-section-1 .donati {
+.flow-content .image-section .tiles-section-1 .donati {
   grid-area: donati;
 }
-.flow-content .tiles-section-1 .seat-depth {
+.flow-content .image-section .tiles-section-1 .seat-depth {
   grid-area: seat;
 }
 .flow-content .tiles-section-2 {

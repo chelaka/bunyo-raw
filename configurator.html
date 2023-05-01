@@ -26,8 +26,8 @@
         <div class="configurator">
           <div class="grid-12">
             <div class="col-5 left position-relative">
-              <div class="form-wrapper">
-                <div class="header p-7">
+              <form class="form-wrapper" id="config-form">
+                <div class="form-top p-7">
                   <div class="logo mb-3">
                     <img src="assets/logos/text-black.svg" alt="" />
                   </div>
@@ -42,15 +42,60 @@
                   </div>
 
                   <div class="c-step-configs">
-                    <div class="c-step-config c-step-1 active">
-                      <div class="config config-backrest">
+                    <div class="c-step-config c-step-1 config-product active">
+                      <div class="config config-backrest" value="Backrest">
                         <div class="title">
-                          <div class="label">
-                            Backrest:<span class="selection">Mesh</span>
+                          <div
+                            class="d-flex justify-content-between align-items-center"
+                          >
+                            <div class="label">
+                              Backrest:<span class="selection"></span>
+                            </div>
+                            <div
+                              class="text-sm font-gray help-text"
+                              id="comfort-mesh-help"
+                            >
+                              what's this?
+                            </div>
                           </div>
                         </div>
                         <div class="options double-col">
-                          <div class="option">
+                          <input
+                            type="radio"
+                            name="Backrest"
+                            value="Comfort"
+                            id="backrest-comfort"
+                            class="hide-dom"
+                            checked="checked"
+                            data-image-url="backrest/comfort"
+                          />
+                          <label for="backrest-comfort" class="option">
+                            <div class="option-image">
+                              <img
+                                src="assets/renders/placeholder.png"
+                                alt=""
+                              />
+                            </div>
+                            <div class="option-details">
+                              <div class="header">
+                                <div class="label">Comfort</div>
+                                <!-- <div class="add-on-price">€10</div> -->
+                              </div>
+                              <div class="description">
+                                Description about what the comfort backrest is
+                              </div>
+                            </div>
+                          </label>
+
+                          <input
+                            type="radio"
+                            name="Backrest"
+                            value="Mesh"
+                            id="backrest-mesh"
+                            class="hide-dom"
+                            data-image-url="backrest/mesh"
+                          />
+                          <label for="backrest-mesh" class="option">
                             <div class="option-image">
                               <img
                                 src="assets/renders/placeholder.png"
@@ -66,36 +111,26 @@
                                 Description about what the comfort backrest is
                               </div>
                             </div>
-                          </div>
-                          <div class="option">
-                            <div class="option-image">
-                              <img
-                                src="assets/renders/placeholder.png"
-                                alt=""
-                              />
-                            </div>
-                            <div class="option-details">
-                              <div class="header">
-                                <div class="label">Comfort</div>
-                                <div class="add-on-price">€10</div>
-                              </div>
-                              <div class="description">
-                                Description about what the comfort backrest is
-                              </div>
-                            </div>
-                          </div>
+                          </label>
                         </div>
                       </div>
-                      <div class="config config-footrest">
+                      <div class="config config-footrest" value="Footrest">
                         <div class="title">
                           <div class="label">
-                            Footrest:<span class="selection"
-                              >Black Plastic</span
-                            >
+                            Footrest:<span class="selection"></span>
                           </div>
                         </div>
                         <div class="options double-col">
-                          <div class="option">
+                          <input
+                            type="radio"
+                            name="Footrest"
+                            value="Plastic"
+                            id="footrest-plastic"
+                            class="hide-dom"
+                            checked="checked"
+                            data-image-url="footrest/plastic"
+                          />
+                          <label for="footrest-plastic" class="option">
                             <div class="option-image">
                               <img
                                 src="assets/renders/placeholder.png"
@@ -105,14 +140,22 @@
                             <div class="option-details">
                               <div class="header">
                                 <div class="label">Black plastic</div>
-                                <div class="add-on-price">€10</div>
+                                <!-- <div class="add-on-price">€10</div> -->
                               </div>
                               <div class="description">
                                 Description about what the comfort backrest is
                               </div>
                             </div>
-                          </div>
-                          <div class="option">
+                          </label>
+                          <input
+                            type="radio"
+                            name="Footrest"
+                            value="Aluminium"
+                            id="footrest-aluminium"
+                            class="hide-dom"
+                            data-image-url="footrest/aluminium"
+                          />
+                          <label for="footrest-aluminium" class="option">
                             <div class="option-image">
                               <img
                                 src="assets/renders/placeholder.png"
@@ -128,19 +171,27 @@
                                 Description about what the comfort backrest is
                               </div>
                             </div>
-                          </div>
+                          </label>
                         </div>
                       </div>
                     </div>
-                    <div class="c-step-config c-step-2">
+                    <div class="c-step-config c-step-2 config-accessories">
                       <div class="config config-headrest">
                         <div class="title">
                           <div class="label">
-                            Headrest:<span class="selection">Mesh</span>
+                            Headrest:<span class="selection"></span>
                           </div>
                         </div>
                         <div class="options single-col">
-                          <div class="option">
+                          <input
+                            type="radio"
+                            name="Headrest"
+                            value="Comfort"
+                            id="headrest-comfort"
+                            class="hide-dom"
+                            data-image-url="headrest/comfort"
+                          />
+                          <label for="headrest-comfort" class="option">
                             <div class="option-image">
                               <img
                                 src="assets/renders/placeholder.png"
@@ -156,8 +207,16 @@
                                 Description about what the comfort backrest is
                               </div>
                             </div>
-                          </div>
-                          <div class="option">
+                          </label>
+                          <input
+                            type="radio"
+                            name="Headrest"
+                            value="Mesh"
+                            id="headrest-mesh"
+                            class="hide-dom"
+                            data-image-url="headrest/mesh"
+                          />
+                          <label for="headrest-mesh" class="option">
                             <div class="option-image">
                               <img
                                 src="assets/renders/placeholder.png"
@@ -166,24 +225,47 @@
                             </div>
                             <div class="option-details">
                               <div class="header">
-                                <div class="label">Comfort</div>
+                                <div class="label">Mesh</div>
                                 <div class="add-on-price">€10</div>
                               </div>
                               <div class="description">
                                 Description about what the comfort backrest is
                               </div>
                             </div>
-                          </div>
+                          </label>
+                          <input
+                            type="radio"
+                            name="Headrest"
+                            id="headrest-none"
+                            class="hide-dom"
+                            checked="checked"
+                            label="No headrest"
+                          />
+                          <label for="headrest-none" class="option">
+                            <div class="option-details">
+                              <div class="header">
+                                <div class="label">I don't want a headrest</div>
+                              </div>
+                            </div>
+                          </label>
                         </div>
                       </div>
                       <div class="config config-armrest">
                         <div class="title">
                           <div class="label">
-                            Armrest:<span class="selection">Black Plastic</span>
+                            Armrest:<span class="selection"></span>
                           </div>
                         </div>
                         <div class="options single-col">
-                          <div class="option">
+                          <input
+                            type="radio"
+                            name="Armrest"
+                            value="4D Armpads"
+                            id="4d-armpads"
+                            class="hide-dom"
+                            data-image-url="armrest/4d"
+                          />
+                          <label for="4d-armpads" class="option">
                             <div class="option-image">
                               <img
                                 src="assets/renders/placeholder.png"
@@ -192,119 +274,89 @@
                             </div>
                             <div class="option-details">
                               <div class="header">
-                                <div class="label">Black plastic</div>
+                                <div class="label">4D Armpads</div>
                                 <div class="add-on-price">€10</div>
                               </div>
                               <div class="description">
                                 Description about what the comfort backrest is
                               </div>
                             </div>
-                          </div>
-                          <div class="option">
-                            <div class="option-image">
-                              <img
-                                src="assets/renders/placeholder.png"
-                                alt=""
-                              />
-                            </div>
+                          </label>
+                          <input
+                            type="radio"
+                            name="Armrest"
+                            id="armrest-none"
+                            class="hide-dom"
+                            checked="checked"
+                            label="No Armpad addon"
+                          />
+                          <label for="armrest-none" class="option">
+                            <div class="option-image"></div>
                             <div class="option-details">
                               <div class="header">
-                                <div class="label">Shined Aluminium</div>
-                                <div class="add-on-price">€10</div>
-                              </div>
-                              <div class="description">
-                                Description about what the comfort backrest is
+                                <div class="label">
+                                  I don't want an armpad addon
+                                </div>
                               </div>
                             </div>
-                          </div>
+                          </label>
                         </div>
                       </div>
                     </div>
                     <div class="c-step-config c-step-3">
-                      <div class="config config-backrest">
-                        <div class="title">
-                          <div class="label">
-                            Backrest:<span class="selection">Mesh</span>
+                      <div class="config summary-wrapper">
+                        <div class="summary-block product-summary">
+                          <div class="summary-title">
+                            <div class="label">
+                              The Flagship
+                              <span
+                                id="product-cart-quantity"
+                                class="quantity text-md font-gray ml-2"
+                              ></span>
+                            </div>
                           </div>
+                          <div
+                            class="options-picked"
+                            id="options-picked-product"
+                          ></div>
                         </div>
-                        <div class="options double-col">
-                          <div class="option">
-                            <div class="option-image">
-                              <img
-                                src="assets/renders/placeholder.png"
-                                alt=""
-                              />
-                            </div>
-                            <div class="option-details">
-                              <div class="header">
-                                <div class="label">Comfort</div>
-                                <div class="add-on-price">€10</div>
-                              </div>
-                              <div class="description">
-                                Description about what the comfort backrest is
-                              </div>
-                            </div>
+                        <div class="summary-block accessories-summary">
+                          <div class="summary-title">
+                            <div class="label">Accessories</div>
                           </div>
-                          <div class="option">
-                            <div class="option-image">
-                              <img
-                                src="assets/renders/placeholder.png"
-                                alt=""
-                              />
-                            </div>
-                            <div class="option-details">
-                              <div class="header">
-                                <div class="label">Comfort</div>
-                                <div class="add-on-price">€10</div>
-                              </div>
-                              <div class="description">
-                                Description about what the comfort backrest is
-                              </div>
-                            </div>
-                          </div>
+                          <div
+                            class="options-picked"
+                            id="options-picked-accessories"
+                          ></div>
                         </div>
-                      </div>
-                      <div class="config config-footrest">
-                        <div class="title">
-                          <div class="label">
-                            Footrest:<span class="selection"
-                              >Black Plastic</span
-                            >
+                        <div
+                          id="go-to-accessories"
+                          class="no-accessories d-flex justify-content-between align-items-center mb-10 hide-dom"
+                        >
+                          <div>
+                            <div class="text-sm">No accessories selected</div>
+                            <div class="text-sm font-gray">
+                              Enhance your sitting experience with Bunyo
+                              Flagship accessories
+                            </div>
                           </div>
+                          <img src="assets/icons/plus-circle.svg" />
                         </div>
-                        <div class="options double-col">
-                          <div class="option">
-                            <div class="option-image">
-                              <img
-                                src="assets/renders/placeholder.png"
-                                alt=""
-                              />
-                            </div>
-                            <div class="option-details">
-                              <div class="header">
-                                <div class="label">Black plastic</div>
-                                <div class="add-on-price">€10</div>
+                        <div class="summary-block bunyo-care-included text-md">
+                          <div class="options-picked">
+                            <div class="pick">
+                              <div class="label d-flex">
+                                10 Years of
+                                <span class="care-icon"> Bunyo Care</span>
+                                included.
+                                <div
+                                  class="text-sm help-text ml-2 text-underline"
+                                  id="bunyo-care-help"
+                                >
+                                  what's this?
+                                </div>
                               </div>
-                              <div class="description">
-                                Description about what the comfort backrest is
-                              </div>
-                            </div>
-                          </div>
-                          <div class="option">
-                            <div class="option-image">
-                              <img
-                                src="assets/renders/placeholder.png"
-                                alt=""
-                              />
-                            </div>
-                            <div class="option-details">
-                              <div class="header">
-                                <div class="label">Shined Aluminium</div>
-                                <div class="add-on-price">€10</div>
-                              </div>
-                              <div class="description">
-                                Description about what the comfort backrest is
-                              </div>
+                              <div class="value">Free</div>
                             </div>
                           </div>
                         </div>
@@ -314,29 +366,63 @@
                 </div>
 
                 <div class="c-footer-wrapper">
-                  <div class="c-footer m-7">
-                    <div class="c-footer-upper px-5 py-5">
-                      <div class="row quantity-row text-md mb-5">
+                  <div class="c-footer mx-7 mb-7 mt-3">
+                    <div class="c-footer-upper px-5 py-3">
+                      <div class="row quantity-row text-md">
                         <div class="label">Quantity</div>
-                        <div class="quanity-selector"></div>
+                        <div class="quantity-selector">
+                          <button
+                            class="qty-count qty-count-minus"
+                            data-action="minus"
+                            type="button"
+                            id="minus"
+                          >
+                            <img src="assets/icons/arrow-left-circle.svg" />
+                          </button>
+                          <input
+                            class="product-qty"
+                            type="number"
+                            name="product-qty"
+                            min="1"
+                            value="1"
+                            id="quantity"
+                          />
+                          <button
+                            class="qty-count qty-count-add"
+                            data-action="add"
+                            type="button"
+                            id="plus"
+                          >
+                            <img src="assets/icons/arrow-right-circle.svg" />
+                          </button>
+                        </div>
                       </div>
+                    </div>
+                    <div
+                      class="c-footer-lower px-5 py-3 d-flex justify-content-between"
+                    >
                       <div class="row total-row text-lg">
-                        <div class="label">Your Total</div>
+                        <div class="label text-md">Your Total</div>
                         <div class="total">
                           €400 <span class="including-BTW">incl. BTW</span>
                         </div>
                       </div>
-                    </div>
-                    <div class="c-footer-lower p-5">
-                      <button class="btn next-btn">Next Step</button>
+                      <button
+                        type="button"
+                        class="btn next-btn text-lg"
+                        id="form-btn"
+                        name="submit"
+                      >
+                        Next Step
+                      </button>
                     </div>
                   </div>
                 </div>
-              </div>
+              </form>
             </div>
             <div class="col-7 right">
-              <div class="wrapper gray-gradient p-10 product-wrapper">
-                <div class="header mb-10 d-flex">
+              <div class="wrapper gray-gradient p-7 product-wrapper">
+                <div class="header d-flex">
                   <div class="icon mr-3">
                     <img src="assets/icons/message-circle.svg" alt="" />
                   </div>
@@ -347,8 +433,24 @@
                     </div>
                   </div>
                 </div>
-                <div class="product">
-                  <!-- <img src="assets/renders/placeholder.png" alt="" /> -->
+                <div class="product-image-wrapper">
+                  <img
+                    src="assets/configurator/base/flagship.png"
+                    class="product-image base"
+                    alt=""
+                  />
+                  <img
+                    src="assets/configurator/backrest/comfort.png"
+                    class="product-image Backrest"
+                    alt=""
+                  />
+                  <img
+                    src="assets/configurator/footrest/plastic.png"
+                    class="product-image Footrest"
+                    alt=""
+                  />
+                  <img src="" class="product-image Headrest" alt="" />
+                  <img src="" class="product-image Armrest" alt="" />
                 </div>
                 <div class="footer-services">
                   <ul class="services-list">
@@ -370,7 +472,7 @@
         <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
         <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
         <script src="scripts/configurator.js"></script>
-        <script src="scripts/pageloader.js"></script>
+        <!-- <script src="scripts/pageloader.js"></script> -->
       </div>
     </div>
   </body>

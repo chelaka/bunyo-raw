@@ -115,126 +115,124 @@
       grid-area: render;
       height: 100%;
       max-height: unset;
-      .img-frame {
+    }
+    .flow-intro-section {
+      border-bottom: 1px solid $bunyo-gray;
+      ul {
+        color: $gray-600;
+        list-style: none;
+        list-style-type: none;
+        display: flex;
+        margin-top: 2rem;
+        .benefit {
+          background: url("assets/icons/check-circle.svg") no-repeat 7px 7px
+            transparent;
+          margin-right: 3rem;
+          margin-bottom: 1.2rem;
+          padding-left: 2.2rem;
+          padding-top: 0.1rem;
+        }
       }
     }
-  }
-  .flow-intro-section {
-    border-bottom: 1px solid $bunyo-gray;
-    ul {
-      color: $gray-600;
-      list-style: none;
-      list-style-type: none;
-      display: flex;
-      margin-top: 2rem;
-      .benefit {
-        background: url("assets/icons/check-circle.svg") no-repeat 7px 7px
-          transparent;
-        margin-right: 3rem;
-        margin-bottom: 1.2rem;
-        padding-left: 2.2rem;
-        padding-top: 0.1rem;
+    .social-proof-section {
+      .logo-grid {
+        .logo {
+          padding: 0.4rem 2.5rem;
+        }
+        img {
+          max-width: 100%;
+        }
       }
     }
-  }
-  .social-proof-section {
-    .logo-grid {
-      .logo {
-        padding: 0.4rem 2.5rem;
-      }
-      img {
-        max-width: 100%;
-      }
-    }
-  }
 
-  .feature-tiles {
-    .tile {
-      cursor: pointer;
-      position: relative;
-      .img-frame {
-        &:after {
-          content: " ";
+    .feature-tiles {
+      .tile {
+        cursor: pointer;
+        position: relative;
+        .img-frame {
+          &:after {
+            content: " ";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 0.4rem;
+            background: linear-gradient(
+              360deg,
+              rgba(0, 0, 0, 0.3) 0%,
+              rgba(0, 0, 0, 0) 106.57%
+            );
+          }
+        }
+        .text-wrapper {
           position: absolute;
+          scale: (1);
+          padding: 1.2rem;
           top: 0;
           left: 0;
+          z-index: 1;
+          color: white;
           width: 100%;
           height: 100%;
-          border-radius: 0.4rem;
-          background: linear-gradient(
-            360deg,
-            rgba(0, 0, 0, 0.3) 0%,
-            rgba(0, 0, 0, 0) 106.57%
-          );
+          display: flex;
+          .text-frame {
+            max-width: 12rem;
+            .title {
+              margin-bottom: 0.4rem;
+            }
+            .description {
+              @extend .text-md;
+              font-weight: 500;
+            }
+          }
+          &.top {
+            align-items: flex-start;
+          }
+          &.bottom {
+            align-items: flex-end;
+          }
+          &.left {
+            justify-content: flex-start;
+          }
+          &.right {
+            justify-content: flex-end;
+          }
+        }
+        &.small-tile {
+          .text-frame {
+            .title {
+              @extend .text-md;
+            }
+            .description {
+              @extend .text-sm;
+            }
+          }
         }
       }
-      .text-wrapper {
-        position: absolute;
-        scale: (1);
-        padding: 1.2rem;
-        top: 0;
-        left: 0;
-        z-index: 1;
-        color: white;
-        width: 100%;
+      .img-frame {
+        max-height: unset;
         height: 100%;
-        display: flex;
-        .text-frame {
-          max-width: 12rem;
-          .title {
-            margin-bottom: 0.4rem;
-          }
-          .description {
-            @extend .text-md;
-            font-weight: 500;
-          }
-        }
-        &.top {
-          align-items: flex-start;
-        }
-        &.bottom {
-          align-items: flex-end;
-        }
-        &.left {
-          justify-content: flex-start;
-        }
-        &.right {
-          justify-content: flex-end;
-        }
-      }
-      &.small-tile {
-        .text-frame {
-          .title {
-            @extend .text-md;
-          }
-          .description {
-            @extend .text-sm;
-          }
-        }
       }
     }
-    .img-frame {
-      max-height: unset;
-      height: 100%;
-    }
-  }
 
-  .tiles-section-1 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1.5rem;
-    grid-template-rows: auto;
-    grid-template-areas:
-      "lumbar lumbar donati"
-      "lumbar lumbar seat";
-    .lumbar-support {
-      grid-area: lumbar;
-    }
-    .donati {
-      grid-area: donati;
-    }
-    .seat-depth {
-      grid-area: seat;
+    .tiles-section-1 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 1.5rem;
+      grid-template-rows: auto;
+      grid-template-areas:
+        "lumbar lumbar donati"
+        "lumbar lumbar seat";
+      .lumbar-support {
+        grid-area: lumbar;
+      }
+      .donati {
+        grid-area: donati;
+      }
+      .seat-depth {
+        grid-area: seat;
+      }
     }
   }
 

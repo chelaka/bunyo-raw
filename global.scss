@@ -33,12 +33,23 @@ img {
 //smoothscroll
 body {
   overflow-x: hidden;
-  overflow-y: scroll;
   height: 100vh;
 }
 
+.hide-dom {
+  position: absolute;
+  z-index: -1;
+  width: auto;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
 .text-center {
   text-align: center;
+}
+
+.text-underline {
+  text-decoration: underline;
 }
 
 .position-relative {
