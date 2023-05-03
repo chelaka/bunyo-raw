@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Configurator : Bunyo</title>
 
+    <link
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="configurator.css" />
     <link rel="stylesheet" href="global.css" />
 
@@ -21,11 +25,33 @@
       <div class="logo text-5xl">Bunyo®</div>
     </div> -->
 
+    <div class="mini-product-image-wrapper gray-gradient">
+      <div class="position-relative images-wrapper">
+        <img
+          src="assets/configurator/base/flagship.png"
+          class="product-image base"
+          alt=""
+        />
+        <img
+          src="assets/configurator/backrest/comfort.png"
+          class="product-image Backrest"
+          alt=""
+        />
+        <img
+          src="assets/configurator/footrest/plastic.png"
+          class="product-image Footrest"
+          alt=""
+        />
+        <img src="" class="product-image Headrest" alt="" />
+        <img src="" class="product-image Armrest" alt="" />
+      </div>
+    </div>
+
     <div class="smooth-wrapper" id="smooth-wrapper" data-scroll-container>
       <div class="smooth-content">
         <div class="configurator">
           <div class="grid-12">
-            <div class="col-5 left position-relative">
+            <div class="col-5 col-md-6 left position-relative">
               <form class="form-wrapper" id="config-form">
                 <div class="form-top p-7">
                   <div class="logo mb-3">
@@ -420,7 +446,7 @@
                 </div>
               </form>
             </div>
-            <div class="col-7 right">
+            <div class="col-7 col-md-6 right">
               <div class="wrapper gray-gradient p-7 product-wrapper">
                 <div class="header d-flex">
                   <div class="icon mr-3">
@@ -468,11 +494,11 @@
             </div>
           </div>
         </div>
-
+        <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
         <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
         <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
         <script src="scripts/configurator.js"></script>
-        <!-- <script src="scripts/pageloader.js"></script> -->
+        <script src="scripts/smoothscroll.js"></script>
       </div>
     </div>
   </body>

@@ -1,13 +1,20 @@
 @use "_designSystem.scss" as *;
+@use "_responsive.scss" as *;
 
 .configurator {
   height: 100vh;
+  @include for-size(tablet-portrait) {
+    height: 100%;
+  }
   .grid-12,
   .left,
   .right,
   .product-wrapper {
     height: 100vh;
     grid-gap: 0;
+    @include for-size(tablet-portrait) {
+      height: 100%;
+    }
   }
   .help-text {
     text-decoration: underline;
@@ -17,6 +24,10 @@
     display: flex;
     flex-direction: column;
     overflow-y: hidden;
+
+    @include for-size(tablet-portrait) {
+      order: 2;
+    }
     .form-wrapper {
       height: 100%;
       display: flex;
@@ -26,6 +37,13 @@
         flex: 1 1 auto;
         overflow-y: auto;
         scrollbar-gutter: stable both-edges;
+        @include for-size(tablet-portrait) {
+          overflow: visible;
+        }
+        @include for-size(tablet-portrait) {
+          padding-top: 2rem;
+          padding-bottom: 2rem;
+        }
         &::-webkit-scrollbar-track {
           border-radius: 10px;
           background-color: transparent;
@@ -90,6 +108,10 @@
                 }
               }
               &.double-col {
+                @include for-size(tablet-landscape) {
+                  flex-direction: column;
+                  margin-bottom: 0.6rem;
+                }
                 .option {
                   flex: 0 1 49%;
                 }
@@ -257,9 +279,16 @@
     }
   }
   .right {
+    @include for-size(tablet-portrait) {
+      height: 70vh;
+      order: 1;
+    }
     .product-wrapper {
       display: flex;
       flex-direction: column;
+      @include for-size(tablet-portrait) {
+        padding: 1rem;
+      }
       .header {
         cursor: pointer;
       }
@@ -290,12 +319,19 @@
           display: flex;
           flex-wrap: wrap;
           margin-top: 1rem;
+
           .service {
             background: url("assets/icons/check-circle.svg") no-repeat 7px 7px
               transparent;
             padding-left: 2.2rem;
             padding-top: 0.4rem;
             height: 2rem;
+            @include for-size(tablet-landscape) {
+              margin-bottom: 1rem;
+            }
+            @include for-size(tablet-portrait) {
+              margin-bottom: 0.5rem;
+            }
             &:nth-child(odd) {
               flex: 1 0 60%;
             }
@@ -305,6 +341,34 @@
           }
         }
       }
+    }
+  }
+}
+
+.mini-product-image-wrapper {
+  position: fixed;
+  width: 300px;
+  height: 200px;
+  z-index: 10;
+  left: 2vw;
+  top: 5vh;
+  border-radius: 0.4rem;
+  .images-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    img {
+      max-width: 100%;
+      height: 100%;
+      object-fit: contain;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      right: 0;
+      bottom: 0;
+      transform: translateX(-50%);
     }
   }
 }

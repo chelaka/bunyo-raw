@@ -1,5 +1,7 @@
 window.addEventListener("load", function () {
   // Variables
+  let configurator = document.querySelector(".configurator");
+  let configuratorRight = document.querySelector(".configurator .right");
   let cPages = document.querySelectorAll(
     ".configurator .c-step-configs .c-step-config"
   );
@@ -17,6 +19,13 @@ window.addEventListener("load", function () {
     productConfig: {},
     accessoriesConfig: {},
   };
+
+  locoScroll = window.locoScroll;
+
+  //mini confgi
+  var miniConfig = document.querySelector(".mini-product-image-wrapper");
+  var isMiniConfigVisible = false;
+  gsap.set(miniConfig, { x: -400 });
 
   // Update Position
   function updatePosition(pagePosition) {
@@ -140,7 +149,37 @@ window.addEventListener("load", function () {
         imagetoReplace = document.querySelector(
           ".product-image-wrapper ." + clickedname
         );
+        miniImagetoReplace = document.querySelector(
+          ".mini-product-image-wrapper ." + clickedname
+        );
+
         imagetoReplace.src = fullUrl;
+        miniImagetoReplace.src = fullUrl;
+
+        var currentScroll = window.locoScroll.scroll.instance.scroll.y;
+        var configuratorHeight = configuratorRight.clientHeight;
+
+        var showMiniConfig = gsap.timeline({ paused: true });
+        showMiniConfig
+          .to(miniConfig, { x: 0, duration: 0.5, ease: "power2.inOut" })
+          .add(function () {
+            isMiniConfigVisible = true;
+          }) // Slide in from the left
+          .to(miniConfig, { duration: 3 }) // Pause for 3 seconds
+          .to(miniConfig, { x: -400, duration: 0.5, ease: "power2.inOut" })
+          .add(function () {
+            isMiniConfigVisible = false;
+          }); // Slide out to the left
+
+        // check if the scroll position is greater than the threshold
+        if (currentScroll > 100) {
+          if (isMiniConfigVisible) {
+          } else {
+            //show miniconfig
+            showMiniConfig.play();
+          }
+        }
+
         updateForm();
       });
     });
@@ -249,6 +288,5 @@ window.addEventListener("load", function () {
   });
 
   updateForm();
-
   //load end
 });
