@@ -1,4 +1,5 @@
 @use "_designSystem.scss" as *;
+@use "_responsive.scss" as *;
 
 .hero-background {
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
@@ -7,9 +8,19 @@
 
 .bunyo-care-section {
   .services-summary-section {
+    .para {
+      padding-right: 7rem;
+      @include for-size(tablet-landscape) {
+        padding-right: unset;
+      }
+    }
     .img-frame {
       max-height: unset;
       min-height: 26.4rem;
+      @include for-size(tablet-landscape) {
+        min-height: unset;
+        height: 10rem;
+      }
     }
     .page-aside-title {
       color: $bunyo-black;
@@ -24,10 +35,16 @@
     flex-wrap: wrap;
     list-style: none;
     list-style-image: url("assets/icons/bunyoCare.svg");
+    @include for-size(tablet-landscape) {
+      padding-left: 1rem;
+    }
     .service {
       flex: 1 1 50%;
       margin-bottom: 1.8rem;
       padding-left: 0.5rem;
+      @include for-size(tablet-landscape) {
+        padding-right: 3rem;
+      }
     }
   }
   .other-services-summary-list {
@@ -94,6 +111,16 @@
 
   .row-9 {
     .office-interior-section {
+      .para {
+        @include for-size(tablet-portrait) {
+          order: 2;
+        }
+      }
+      .images {
+        @include for-size(tablet-portrait) {
+          order: 1;
+        }
+      }
       .left-images {
         display: flex;
         flex-direction: column;
@@ -104,8 +131,20 @@
           &:last-child {
             margin-bottom: 0;
           }
+          &:nth-child(2) {
+            @include for-size(tablet-portrait) {
+              display: none;
+            }
+          }
         }
       }
     }
+  }
+}
+
+@include for-size(tablet-portrait) {
+  .service-1,
+  .service-6 {
+    margin-bottom: 3rem;
   }
 }

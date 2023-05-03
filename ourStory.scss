@@ -1,10 +1,19 @@
 @use "_designSystem.scss" as *;
+@use "_responsive.scss" as *;
 
 .hero-background {
   background-image: linear-gradient(rgba(0, 0, 0, 0.29), rgba(0, 0, 0, 0.29)),
     url("assets/heroStory.png");
 }
 
+.what-we-do-section {
+  .para {
+    padding-right: 7rem;
+    @include for-size(tablet-landscape) {
+      padding-right: unset;
+    }
+  }
+}
 .video-break-section {
   .title {
     color: $bunyo-white;
@@ -43,8 +52,17 @@
 }
 
 .values-section {
+  .para {
+    padding-right: 7rem;
+    @include for-size(tablet-landscape) {
+      padding-right: unset;
+    }
+  }
   .value {
     padding-right: 8rem;
+    @include for-size(tablet-landscape) {
+      padding-right: 1rem;
+    }
     .number {
       @extend .text-4xl;
       margin-bottom: 2.2rem;
@@ -88,7 +106,26 @@
   }
 }
 
+.sustainability-section {
+  .para {
+    @include for-size(tablet-landscape) {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
 .about-you-section {
+  .para {
+    @include for-size(tablet-landscape) {
+      order: 1;
+      margin-bottom: 2rem;
+    }
+  }
+  .image {
+    @include for-size(tablet-landscape) {
+      order: 2;
+    }
+  }
   .img-frame {
     height: 40rem;
     max-height: unset;

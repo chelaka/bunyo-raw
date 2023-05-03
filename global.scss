@@ -1,4 +1,5 @@
 @use "_designSystem.scss" as *;
+@use "_responsive.scss" as *;
 
 .navbar {
   position: fixed;
@@ -25,6 +26,18 @@ body {
   line-height: 1.6rem;
   color: $bunyo-black;
   font-size: 20px;
+  @include for-size(small-desktop) {
+    font-size: 18px;
+  }
+  @include for-size(tablet-landscape) {
+    font-size: 17px;
+  }
+  @include for-size(tablet-portrait) {
+    font-size: 16px;
+  }
+  @include for-size(phone) {
+    font-size: 16px;
+  }
 }
 
 img {
@@ -113,8 +126,19 @@ body {
   overflow: hidden;
   border-radius: 0.4rem;
   max-height: 26.4rem;
+  @include for-size(tablet-landscape) {
+    max-height: 20rem;
+  }
+  &.image-center {
+    @include for-size(tablet-landscape) {
+      height: 20rem;
+    }
+  }
   &.unset-height {
     max-height: unset;
+    @include for-size(tablet-landscape) {
+      max-height: 20rem;
+    }
   }
   img {
     width: 100%;
@@ -176,7 +200,9 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    padding: 3rem 0;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    // padding: 3rem 0;
     & * {
       color: White;
     }
@@ -228,6 +254,9 @@ body {
   }
   .mini-para-description {
     color: $gray-600;
+  }
+  + .btn {
+    margin-top: 2rem;
   }
 }
 
@@ -557,7 +586,7 @@ body {
     border-radius: 100%;
     width: 3rem;
     height: 3rem;
-    z-index: 1;
+    z-index: 2;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     &:hover {
@@ -581,11 +610,22 @@ body {
       left: 0;
       grid-gap: 0rem;
       opacity: 0;
+      @include for-size(phone) {
+        display: flex;
+        flex-direction: column;
+      }
       &.visible {
         opacity: 1;
+        z-index: 1;
       }
       .text-side {
         background: $bunyo-white;
+        @include for-size(tablet-portrait) {
+          flex: 1 1 1px;
+          min-width: 1px;
+          order: 2;
+          overflow: auto;
+        }
         .text-wrapper {
           padding: 4.5rem;
           top: 0;
@@ -594,6 +634,15 @@ body {
           width: 100%;
           height: 100%;
           display: flex;
+          @include for-size(tablet-landscape) {
+            padding: 3rem;
+          }
+          @include for-size(tablet-portrait) {
+            padding: 2rem;
+          }
+          @include for-size(phone) {
+            padding: 1.5rem;
+          }
           .text-frame {
             .intro {
               margin-bottom: 3rem;
@@ -633,6 +682,12 @@ body {
       }
 
       .image-side {
+        @include for-size(tablet-portrait) {
+          order: 1;
+          flex: 0 0 35vh;
+          min-width: 1px;
+          overflow: hidden;
+        }
         .image-wrapper {
           width: 100%;
           height: 100%;

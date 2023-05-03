@@ -1,4 +1,5 @@
 @use "_designSystem.scss" as *;
+@use "_responsive.scss" as *;
 
 .hero-background {
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
@@ -7,11 +8,15 @@
 
 .flow-selection-section {
   .flow-selectors {
+    display: flex;
     button {
       padding: 1rem 3rem;
       position: relative;
       background-color: $gray-100;
       color: $bunyo-black;
+      @include for-size(tablet-landscape) {
+        margin-right: 1rem;
+      }
       &.active {
         background-color: $bunyo-black;
         color: $bunyo-white;
@@ -46,6 +51,8 @@
   bottom: 1.5rem;
   left: 50%;
   transform: translateX(-50%);
+  display: flex;
+  white-space: nowrap;
   button {
     @extend .text-md;
     background-color: $bunyo-white;
@@ -81,6 +88,10 @@
       "img-1 img-1 img-2 img-2 render render render render render render img-8 img-8"
       "img-3 img-3 img-4 img-5 render render render render render render img-9 img-9"
       "img-6 img-6 img-7 img-7 render render render render render render img-10 img-10";
+    @include for-size(tablet-landscape) {
+      grid-gap: 0.4rem;
+    }
+
     .img-1 {
       grid-area: img-1;
     }
@@ -116,123 +127,142 @@
       height: 100%;
       max-height: unset;
     }
-    .flow-intro-section {
-      border-bottom: 1px solid $bunyo-gray;
-      ul {
-        color: $gray-600;
-        list-style: none;
-        list-style-type: none;
-        display: flex;
-        margin-top: 2rem;
-        .benefit {
-          background: url("assets/icons/check-circle.svg") no-repeat 7px 7px
-            transparent;
-          margin-right: 3rem;
-          margin-bottom: 1.2rem;
-          padding-left: 2.2rem;
-          padding-top: 0.1rem;
+  }
+  .flow-intro-section {
+    border-bottom: 1px solid $bunyo-gray;
+    ul {
+      color: $gray-600;
+      list-style: none;
+      list-style-type: none;
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+      .benefit {
+        background: url("assets/icons/check-circle.svg") no-repeat 7px 7px
+          transparent;
+        margin-right: 3rem;
+        margin-bottom: 1.2rem;
+        padding-left: 2.2rem;
+        padding-top: 0.3rem;
+        @include for-size(tablet-landscape) {
+          padding-left: 3rem;
         }
       }
     }
-    .social-proof-section {
-      .logo-grid {
-        .logo {
-          padding: 0.4rem 2.5rem;
-        }
-        img {
-          max-width: 100%;
+  }
+  .social-proof-section {
+    .logo-grid {
+      @include for-size(tablet-landscape) {
+        margin-top: 1rem;
+      }
+      .logo {
+        padding: 0.4rem 2.5rem;
+        @include for-size(tablet-landscape) {
+          padding: 0.2rem 1.5rem;
         }
       }
+      img {
+        max-width: 100%;
+      }
     }
+  }
 
-    .feature-tiles {
-      .tile {
-        cursor: pointer;
-        position: relative;
-        .img-frame {
-          &:after {
-            content: " ";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 0.4rem;
-            background: linear-gradient(
-              360deg,
-              rgba(0, 0, 0, 0.3) 0%,
-              rgba(0, 0, 0, 0) 106.57%
-            );
-          }
-        }
-        .text-wrapper {
+  .feature-tiles {
+    .tile {
+      cursor: pointer;
+      position: relative;
+      .img-frame {
+        &:after {
+          content: " ";
           position: absolute;
-          scale: (1);
-          padding: 1.2rem;
           top: 0;
           left: 0;
-          z-index: 1;
-          color: white;
           width: 100%;
           height: 100%;
-          display: flex;
-          .text-frame {
-            max-width: 12rem;
-            .title {
-              margin-bottom: 0.4rem;
-            }
-            .description {
-              @extend .text-md;
-              font-weight: 500;
-            }
-          }
-          &.top {
-            align-items: flex-start;
-          }
-          &.bottom {
-            align-items: flex-end;
-          }
-          &.left {
-            justify-content: flex-start;
-          }
-          &.right {
-            justify-content: flex-end;
-          }
-        }
-        &.small-tile {
-          .text-frame {
-            .title {
-              @extend .text-md;
-            }
-            .description {
-              @extend .text-sm;
-            }
-          }
+          border-radius: 0.4rem;
+          background: linear-gradient(
+            360deg,
+            rgba(0, 0, 0, 0.3) 0%,
+            rgba(0, 0, 0, 0) 106.57%
+          );
         }
       }
-      .img-frame {
-        max-height: unset;
+      .text-wrapper {
+        position: absolute;
+        scale: (1);
+        padding: 1.2rem;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        color: white;
+        width: 100%;
         height: 100%;
+        display: flex;
+
+        .text-frame {
+          max-width: 12rem;
+          .title {
+            margin-bottom: 0.4rem;
+          }
+          .description {
+            @extend .text-md;
+            font-weight: 500;
+          }
+        }
+        &.top {
+          align-items: flex-start;
+        }
+        &.bottom {
+          align-items: flex-end;
+        }
+        &.left {
+          justify-content: flex-start;
+        }
+        &.right {
+          justify-content: flex-end;
+        }
+      }
+      &.small-tile {
+        .text-frame {
+          .title {
+            @extend .text-md;
+          }
+          .description {
+            @extend .text-sm;
+          }
+        }
       }
     }
+    .img-frame {
+      max-height: unset;
+      height: 100%;
+    }
+  }
 
-    .tiles-section-1 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-gap: 1.5rem;
-      grid-template-rows: auto;
+  .tiles-section-1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5rem;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "lumbar lumbar donati"
+      "lumbar lumbar seat";
+    @include for-size(phone) {
+      grid-template-columns: repeat(2, 1fr);
       grid-template-areas:
-        "lumbar lumbar donati"
-        "lumbar lumbar seat";
-      .lumbar-support {
-        grid-area: lumbar;
-      }
-      .donati {
-        grid-area: donati;
-      }
-      .seat-depth {
-        grid-area: seat;
-      }
+        "lumbar lumbar"
+        "donati donati"
+        "seat seat";
+      grid-gap: 0.8rem;
+    }
+    .lumbar-support {
+      grid-area: lumbar;
+    }
+    .donati {
+      grid-area: donati;
+    }
+    .seat-depth {
+      grid-area: seat;
     }
   }
 
@@ -245,7 +275,17 @@
       "height backrest backrest"
       "headrest backrest backrest"
       "armrest armrest footer";
-
+    @include for-size(phone) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1.5rem;
+      grid-template-rows: auto;
+      grid-template-areas:
+        "height height"
+        "headrest headrest"
+        "backrest backrest"
+        "armrest armrest"
+        "footer footer";
+    }
     .height-adjustable {
       grid-area: height;
     }
@@ -310,7 +350,6 @@
     }
     .b-slides {
       position: relative;
-      min-height: 18rem;
       .b-slide {
         position: absolute;
         top: 0;
@@ -319,6 +358,7 @@
         transition: all 0.3s ease-in-out;
         &.visible {
           opacity: 1;
+          position: relative;
         }
         &.hidden {
           opacity: 0;
@@ -331,6 +371,9 @@
       }
     }
     .img-break {
+      @include for-size(tablet-landscape) {
+        margin-top: 2rem;
+      }
       .nine-five {
         background-color: $bunyo-black;
         border-radius: 0.4rem;
@@ -350,8 +393,12 @@
         .services {
           padding-top: 2rem;
           border-top: 1px solid $gray-400;
+
           .service {
             padding-right: 2rem;
+            @include for-size(tablet-landscape) {
+              margin-bottom: 1.5rem;
+            }
           }
         }
       }
@@ -369,12 +416,21 @@
       .mini-para-description {
         color: $gray-100;
       }
+      .btn {
+        margin-top: 2rem;
+      }
     }
   }
 
   .financially-smart-section {
     .img-frame {
       height: 70%;
+    }
+    .mini-para {
+      padding-right: 6rem;
+      @include for-size(tablet-landscape) {
+        padding-right: unset;
+      }
     }
     .calculations {
       margin-bottom: 3rem;
@@ -385,6 +441,7 @@
         margin-bottom: 0.5rem;
         .value {
           color: $gray-600;
+          text-align: right;
         }
       }
       .line-footer {
@@ -392,6 +449,9 @@
         justify-content: space-between;
         font-weight: bold;
         @extend .text-3xl;
+        .value {
+          text-align: right;
+        }
       }
     }
   }
@@ -408,12 +468,24 @@
       padding: 4rem;
       border-radius: 0.4rem;
       color: $bunyo-white;
+      @include for-size(tablet-landscape) {
+        order: 2;
+      }
+      @include for-size(phone) {
+        padding: 1.5rem;
+      }
       .header {
         padding-right: 12rem;
+        @include for-size(phone) {
+          padding: 1.5rem;
+        }
       }
       .service {
         margin-bottom: 2rem;
         padding-right: 2rem;
+        @include for-size(phone) {
+          padding-right: 1rem;
+        }
         .mini-para {
           .mini-para-title {
             margin-bottom: 0.2rem;
@@ -427,6 +499,11 @@
         &:nth-last-child(-n + 2) {
           margin-bottom: 0;
         }
+      }
+    }
+    .right {
+      @include for-size(tablet-landscape) {
+        order: 1;
       }
     }
   }
@@ -455,7 +532,9 @@
       grid-template-areas:
         "img-1 img-1 img-2 img-4 img-4 img-5"
         "img-1 img-1 img-3 img-4 img-4 img-6";
-
+      @include for-size(phone) {
+        grid-gap: 0.5rem;
+      }
       .img-1 {
         grid-area: img-1;
       }

@@ -1,9 +1,32 @@
 //Layouts/Grids
+@use "_responsive.scss" as *;
 
 .container {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
+  padding-left: 5px;
+  padding-right: 5px;
+  @media (max-width: 575px) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  @media (min-width: 576px) {
+    width: 90%;
+    max-width: unset;
+  }
+  @media (min-width: 768px) {
+    max-width: 90%;
+  }
+  @media (min-width: 992px) {
+    max-width: 960px;
+  }
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+  }
+  @media (min-width: 1400px) {
+    max-width: 1280px;
+  }
 }
 
 .grid-12 {
@@ -11,17 +34,85 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-gap: 1.5rem;
+  @include for-size(tablet-portrait) {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 1.5rem;
+  }
 }
 
-//Col Sizing
 $i: 1;
 @for $i from 1 through 12 {
   .col-#{$i} {
     grid-column: auto/span $i;
   }
+  @include for-size(small-desktop) {
+    .col-lg-#{$i} {
+      grid-column: auto/span $i;
+    }
+  }
+  @include for-size(tablet-landscape) {
+    .grid-12 .col-md-#{$i} {
+      grid-column: auto/span $i;
+    }
+  }
+  @include for-size(tablet-portrait) {
+    .container .grid-12 .col-sm-#{$i} {
+      grid-column: auto/span $i;
+    }
+  }
+  @include for-size(phone) {
+    .col-xs-#{$i} {
+      grid-column: auto/span $i;
+    }
+  }
+}
 
+// Generate classes for starting position without column span
+$i: 1;
+@for $i from 1 through 12 {
   .col-start-#{$i} {
-    grid-column-start: $i !important;
+    grid-column-start: $i;
+  }
+
+  @include for-size(tablet-portrait) {
+    .col-start-#{$i} {
+      grid-column-start: auto !important;
+    }
+  }
+}
+
+// Generate classes for both column span and starting position
+$i: 1;
+@for $i from 1 through 12 {
+  @for $j from 1 through 12 {
+    .col-#{$i}.col-start-#{$j} {
+      grid-column: $j / span $i;
+    }
+    @include for-size(small-desktop) {
+      .col-lg-#{$i}.col-start-#{$j} {
+        grid-column: $j / span $i;
+      }
+    }
+    @include for-size(tablet-landscape) {
+      .grid-12 .col-md-#{$i}.col-start-#{$j} {
+        grid-column: $j / span $i;
+      }
+    }
+    @include for-size(tablet-portrait) {
+      .container .grid-12 .col-sm-#{$i}.col-start-#{$j} {
+        grid-column: $j / span $i;
+      }
+    }
+  }
+}
+
+//helper classes
+
+.unset-start-md {
+  @include for-size(tablet-landscape) {
+    grid-column-start: auto !important;
   }
 }
 

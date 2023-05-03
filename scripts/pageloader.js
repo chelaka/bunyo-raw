@@ -117,8 +117,8 @@ window.addEventListener("load", function () {
       .fromTo(
         ".hero-background",
 
-        { backgroundSize: "130%" },
-        { backgroundSize: "100%", duration: 1.25, ease: "power2.inOut" },
+        { scale: 1.3 },
+        { scale: 1, duration: 1.25, ease: "power2.inOut" },
         "<-=0.25"
       )
       .fromTo(
