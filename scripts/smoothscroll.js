@@ -4,10 +4,10 @@ window.addEventListener("load", function () {
   const locoScroll = new LocomotiveScroll({
     el: document.querySelector(".smooth-wrapper"),
     smooth: true,
-    // lerp: 0.05,
-    // smartphone: {
-    //   smooth: true,
-    // },
+    lerp: 0.05,
+    smartphone: {
+      smooth: true,
+    },
     getDirection: true,
     reloadOnContextChange: true,
   });
